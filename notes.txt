@@ -1,0 +1,9 @@
+The daemon in this project
+In gochi, the daemon is the process that:
+
+Owns the serial port to your ESP32 board (only one program can hold it at a time)
+Stays running so the desk pet keeps working even when you close your terminal
+Listens for commands (from the CLI, or the HTTP server) and forwards them to the board
+
+sudo launchctl stop com.tamagotchi.daemon
+Tell macOS to shut down the gochi background helper that runs your desk pet.

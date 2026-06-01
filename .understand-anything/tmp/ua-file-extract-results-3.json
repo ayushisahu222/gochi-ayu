@@ -1,0 +1,4220 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "cli/src/cli.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 324,
+      "nonEmptyLines": 289,
+      "functions": [
+        {
+          "name": "pickFrom",
+          "startLine": 314,
+          "endLine": 319,
+          "params": [
+            "message",
+            "options"
+          ]
+        },
+        {
+          "name": "print",
+          "startLine": 321,
+          "endLine": 324,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pickFrom",
+          "callee": "select",
+          "lineNumber": 315
+        },
+        {
+          "caller": "pickFrom",
+          "callee": "options.map",
+          "lineNumber": 317
+        },
+        {
+          "caller": "print",
+          "callee": "console.log",
+          "lineNumber": 322
+        },
+        {
+          "caller": "print",
+          "callee": "console.log",
+          "lineNumber": 323
+        },
+        {
+          "caller": "print",
+          "callee": "JSON.stringify",
+          "lineNumber": 323
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/client.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "tcpCall",
+          "startLine": 25,
+          "endLine": 56,
+          "params": [
+            "method",
+            "path",
+            "body"
+          ]
+        },
+        {
+          "name": "udsCall",
+          "startLine": 58,
+          "endLine": 87,
+          "params": [
+            "method",
+            "path",
+            "body"
+          ]
+        },
+        {
+          "name": "call",
+          "startLine": 89,
+          "endLine": 119,
+          "params": [
+            "method",
+            "path",
+            "body"
+          ]
+        },
+        {
+          "name": "health",
+          "startLine": 121,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "face",
+          "startLine": 122,
+          "endLine": 122,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "text",
+          "startLine": 123,
+          "endLine": 123,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "mood",
+          "startLine": 124,
+          "endLine": 124,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "image",
+          "startLine": 126,
+          "endLine": 126,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "state",
+          "startLine": 127,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "fps",
+          "startLine": 128,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "faces",
+          "startLine": 129,
+          "endLine": 129,
+          "params": []
+        },
+        {
+          "name": "ping",
+          "startLine": 130,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "i2c",
+          "startLine": 131,
+          "endLine": 131,
+          "params": []
+        },
+        {
+          "name": "stop",
+          "startLine": 132,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "start",
+          "startLine": 133,
+          "endLine": 133,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "health",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "face",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "text",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "mood",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "image",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "state",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "fps",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "faces",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "ping",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "i2c",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "stop",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "start",
+          "line": 133,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tcpCall",
+          "callee": "JSON.stringify",
+          "lineNumber": 28
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "httpRequest",
+          "lineNumber": 29
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 36
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "res.setEncoding",
+          "lineNumber": 41
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "res.on",
+          "lineNumber": 42
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "res.on",
+          "lineNumber": 43
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "resolve",
+          "lineNumber": 45
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "JSON.parse",
+          "lineNumber": 45
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "reject",
+          "lineNumber": 47
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "req.on",
+          "lineNumber": 52
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "req.write",
+          "lineNumber": 53
+        },
+        {
+          "caller": "tcpCall",
+          "callee": "req.end",
+          "lineNumber": 54
+        },
+        {
+          "caller": "udsCall",
+          "callee": "JSON.stringify",
+          "lineNumber": 60
+        },
+        {
+          "caller": "udsCall",
+          "callee": "httpRequest",
+          "lineNumber": 61
+        },
+        {
+          "caller": "udsCall",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 67
+        },
+        {
+          "caller": "udsCall",
+          "callee": "res.setEncoding",
+          "lineNumber": 72
+        },
+        {
+          "caller": "udsCall",
+          "callee": "res.on",
+          "lineNumber": 73
+        },
+        {
+          "caller": "udsCall",
+          "callee": "res.on",
+          "lineNumber": 74
+        },
+        {
+          "caller": "udsCall",
+          "callee": "resolve",
+          "lineNumber": 76
+        },
+        {
+          "caller": "udsCall",
+          "callee": "JSON.parse",
+          "lineNumber": 76
+        },
+        {
+          "caller": "udsCall",
+          "callee": "reject",
+          "lineNumber": 78
+        },
+        {
+          "caller": "udsCall",
+          "callee": "req.on",
+          "lineNumber": 83
+        },
+        {
+          "caller": "udsCall",
+          "callee": "req.write",
+          "lineNumber": 84
+        },
+        {
+          "caller": "udsCall",
+          "callee": "req.end",
+          "lineNumber": 85
+        },
+        {
+          "caller": "call",
+          "callee": "tcpCall",
+          "lineNumber": 91
+        },
+        {
+          "caller": "call",
+          "callee": "udsCall",
+          "lineNumber": 91
+        },
+        {
+          "caller": "call",
+          "callee": "String",
+          "lineNumber": 93
+        },
+        {
+          "caller": "call",
+          "callee": "/ECONNREFUSED|ENOENT|Connection refused|fetch failed|Unable to connect|socket hang up/i.test",
+          "lineNumber": 95
+        },
+        {
+          "caller": "call",
+          "callee": "console.error",
+          "lineNumber": 100
+        },
+        {
+          "caller": "call",
+          "callee": "existsSync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "call",
+          "callee": "/ENOENT/i.test",
+          "lineNumber": 104
+        },
+        {
+          "caller": "call",
+          "callee": "console.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "call",
+          "callee": "console.error",
+          "lineNumber": 110
+        },
+        {
+          "caller": "call",
+          "callee": "process.exit",
+          "lineNumber": 115
+        },
+        {
+          "caller": "health",
+          "callee": "call",
+          "lineNumber": 121
+        },
+        {
+          "caller": "face",
+          "callee": "call",
+          "lineNumber": 122
+        },
+        {
+          "caller": "text",
+          "callee": "call",
+          "lineNumber": 123
+        },
+        {
+          "caller": "mood",
+          "callee": "call",
+          "lineNumber": 124
+        },
+        {
+          "caller": "image",
+          "callee": "call",
+          "lineNumber": 126
+        },
+        {
+          "caller": "state",
+          "callee": "call",
+          "lineNumber": 127
+        },
+        {
+          "caller": "fps",
+          "callee": "call",
+          "lineNumber": 128
+        },
+        {
+          "caller": "faces",
+          "callee": "call",
+          "lineNumber": 129
+        },
+        {
+          "caller": "ping",
+          "callee": "call",
+          "lineNumber": 130
+        },
+        {
+          "caller": "i2c",
+          "callee": "call",
+          "lineNumber": 131
+        },
+        {
+          "caller": "stop",
+          "callee": "call",
+          "lineNumber": 132
+        },
+        {
+          "caller": "start",
+          "callee": "call",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 12,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/daemon.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 284,
+      "nonEmptyLines": 259,
+      "functions": [
+        {
+          "name": "log",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "...args"
+          ]
+        },
+        {
+          "name": "readBody",
+          "startLine": 126,
+          "endLine": 133,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "readJson",
+          "startLine": 135,
+          "endLine": 142,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 144,
+          "endLine": 148,
+          "params": [
+            "res",
+            "data",
+            "status"
+          ]
+        },
+        {
+          "name": "runDaemon",
+          "startLine": 150,
+          "endLine": 284,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Device",
+          "startLine": 30,
+          "endLine": 119,
+          "methods": [
+            "isConnected",
+            "port",
+            "isStopped",
+            "stop",
+            "start",
+            "attach",
+            "detach",
+            "send"
+          ],
+          "properties": [
+            "transport",
+            "path",
+            "connecting",
+            "stopped",
+            "discovery"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DAEMON_VERSION",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "runDaemon",
+          "line": 150,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isConnected",
+          "callee": "this.transport?.isOpen",
+          "lineNumber": 45
+        },
+        {
+          "caller": "stop",
+          "callee": "this.transport.close",
+          "lineNumber": 59
+        },
+        {
+          "caller": "stop",
+          "callee": "log",
+          "lineNumber": 64
+        },
+        {
+          "caller": "start",
+          "callee": "log",
+          "lineNumber": 70
+        },
+        {
+          "caller": "start",
+          "callee": "this.discovery?.rescan",
+          "lineNumber": 74
+        },
+        {
+          "caller": "attach",
+          "callee": "this.isConnected",
+          "lineNumber": 78
+        },
+        {
+          "caller": "attach",
+          "callee": "t.open",
+          "lineNumber": 82
+        },
+        {
+          "caller": "attach",
+          "callee": "t.on",
+          "lineNumber": 83
+        },
+        {
+          "caller": "attach",
+          "callee": "log",
+          "lineNumber": 84
+        },
+        {
+          "caller": "attach",
+          "callee": "t.on",
+          "lineNumber": 88
+        },
+        {
+          "caller": "attach",
+          "callee": "log",
+          "lineNumber": 88
+        },
+        {
+          "caller": "attach",
+          "callee": "log",
+          "lineNumber": 91
+        },
+        {
+          "caller": "attach",
+          "callee": "log",
+          "lineNumber": 93
+        },
+        {
+          "caller": "detach",
+          "callee": "this.transport?.close",
+          "lineNumber": 104
+        },
+        {
+          "caller": "send",
+          "callee": "this.isConnected",
+          "lineNumber": 111
+        },
+        {
+          "caller": "send",
+          "callee": "this.transport!.send",
+          "lineNumber": 113
+        },
+        {
+          "caller": "send",
+          "callee": "log",
+          "lineNumber": 115
+        },
+        {
+          "caller": "log",
+          "callee": "new Date().toISOString",
+          "lineNumber": 122
+        },
+        {
+          "caller": "log",
+          "callee": "console.log",
+          "lineNumber": 123
+        },
+        {
+          "caller": "readBody",
+          "callee": "req.on",
+          "lineNumber": 129
+        },
+        {
+          "caller": "readBody",
+          "callee": "req.on",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readBody",
+          "callee": "resolve",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readBody",
+          "callee": "req.on",
+          "lineNumber": 131
+        },
+        {
+          "caller": "readJson",
+          "callee": "readBody",
+          "lineNumber": 137
+        },
+        {
+          "caller": "readJson",
+          "callee": "JSON.parse",
+          "lineNumber": 138
+        },
+        {
+          "caller": "send",
+          "callee": "res.setHeader",
+          "lineNumber": 146
+        },
+        {
+          "caller": "send",
+          "callee": "res.end",
+          "lineNumber": 147
+        },
+        {
+          "caller": "send",
+          "callee": "JSON.stringify",
+          "lineNumber": 147
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 151
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "clearStaleSocket",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "watchDevices",
+          "lineNumber": 158
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.attach",
+          "lineNumber": 159
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.detach",
+          "lineNumber": 160
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "device.isConnected",
+          "lineNumber": 165
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "send",
+          "lineNumber": 166
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "device.send",
+          "lineNumber": 172
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "send",
+          "lineNumber": 174
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "device.isConnected",
+          "lineNumber": 176
+        },
+        {
+          "caller": "sendCmd",
+          "callee": "send",
+          "lineNumber": 180
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "createServer",
+          "lineNumber": 183
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "url.split",
+          "lineNumber": 185
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 190
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 192
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isStopped",
+          "lineNumber": 193
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.port",
+          "lineNumber": 194
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.stop",
+          "lineNumber": 200
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 201
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.start",
+          "lineNumber": 204
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 205
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "readJson",
+          "lineNumber": 209
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 214
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "readJson",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "readJson",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 234
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 236
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 240
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "readJson",
+          "lineNumber": 243
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 246
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 246
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 248
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 251
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 252
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "sendCmd",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "send",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "device.isConnected",
+          "lineNumber": 258
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "String",
+          "lineNumber": 258
+        },
+        {
+          "caller": "cleanup",
+          "callee": "watcher.stop",
+          "lineNumber": 264
+        },
+        {
+          "caller": "cleanup",
+          "callee": "server.close",
+          "lineNumber": 267
+        },
+        {
+          "caller": "cleanup",
+          "callee": "process.exit",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "process.on",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "process.on",
+          "lineNumber": 272
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "server.listen",
+          "lineNumber": 274
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "chmodSync",
+          "lineNumber": 279
+        },
+        {
+          "caller": "runDaemon",
+          "callee": "log",
+          "lineNumber": 282
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "cli/src/discovery.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "normalize",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "listEspressifPaths",
+          "startLine": 39,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "watchDevices",
+          "startLine": 54,
+          "endLine": 90,
+          "params": [
+            "onEvent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "watchDevices",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalize",
+          "callee": "p.startsWith",
+          "lineNumber": 33
+        },
+        {
+          "caller": "normalize",
+          "callee": "p.replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "listEspressifPaths",
+          "callee": "SerialPort.list",
+          "lineNumber": 40
+        },
+        {
+          "caller": "listEspressifPaths",
+          "callee": "(p.vendorId || \"\").toLowerCase",
+          "lineNumber": 43
+        },
+        {
+          "caller": "listEspressifPaths",
+          "callee": "out.add",
+          "lineNumber": 45
+        },
+        {
+          "caller": "listEspressifPaths",
+          "callee": "normalize",
+          "lineNumber": 45
+        },
+        {
+          "caller": "tick",
+          "callee": "listEspressifPaths",
+          "lineNumber": 64
+        },
+        {
+          "caller": "tick",
+          "callee": "console.error",
+          "lineNumber": 67
+        },
+        {
+          "caller": "tick",
+          "callee": "known.has",
+          "lineNumber": 70
+        },
+        {
+          "caller": "tick",
+          "callee": "onEvent",
+          "lineNumber": 70
+        },
+        {
+          "caller": "tick",
+          "callee": "live.has",
+          "lineNumber": 71
+        },
+        {
+          "caller": "tick",
+          "callee": "onEvent",
+          "lineNumber": 71
+        },
+        {
+          "caller": "watchDevices",
+          "callee": "tick",
+          "lineNumber": 77
+        },
+        {
+          "caller": "watchDevices",
+          "callee": "setInterval",
+          "lineNumber": 78
+        },
+        {
+          "caller": "watchDevices",
+          "callee": "clearInterval",
+          "lineNumber": 83
+        },
+        {
+          "caller": "watchDevices",
+          "callee": "tick",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/image.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "fileToFrameBase64",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "path",
+            "opts"
+          ]
+        },
+        {
+          "name": "fileToFrameBytes",
+          "startLine": 43,
+          "endLine": 80,
+          "params": [
+            "path",
+            "opts"
+          ]
+        },
+        {
+          "name": "floydSteinberg",
+          "startLine": 84,
+          "endLine": 102,
+          "params": [
+            "lum",
+            "w",
+            "h"
+          ]
+        },
+        {
+          "name": "threshold1bpp",
+          "startLine": 105,
+          "endLine": 109,
+          "params": [
+            "lum",
+            "t"
+          ]
+        },
+        {
+          "name": "packMsbFirst",
+          "startLine": 113,
+          "endLine": 126,
+          "params": [
+            "bits",
+            "w",
+            "h"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FRAME_WIDTH",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "FRAME_HEIGHT",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "FRAME_BYTES",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "fileToFrameBase64",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "fileToFrameBytes",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fileToFrameBase64",
+          "callee": "fileToFrameBytes",
+          "lineNumber": 38
+        },
+        {
+          "caller": "fileToFrameBase64",
+          "callee": "Buffer.from(bytes).toString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fileToFrameBase64",
+          "callee": "Buffer.from",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp(path)\n    .grayscale()\n    .resize(FRAME_WIDTH, FRAME_HEIGHT, { fit: \"contain\", background: bg })\n    .removeAlpha()\n    .raw()\n    .toBuffer",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp(path)\n    .grayscale()\n    .resize(FRAME_WIDTH, FRAME_HEIGHT, { fit: \"contain\", background: bg })\n    .removeAlpha()\n    .raw",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp(path)\n    .grayscale()\n    .resize(FRAME_WIDTH, FRAME_HEIGHT, { fit: \"contain\", background: bg })\n    .removeAlpha",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp(path)\n    .grayscale()\n    .resize",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp(path)\n    .grayscale",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "sharp",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "floydSteinberg",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "threshold1bpp",
+          "lineNumber": 73
+        },
+        {
+          "caller": "fileToFrameBytes",
+          "callee": "packMsbFirst",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/ipc.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "ensureDaemonDir",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "clearStaleSocket",
+          "startLine": 38,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "daemonRequest",
+          "startLine": 72,
+          "endLine": 111,
+          "params": [
+            "method",
+            "path",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DAEMON_DIR",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "DAEMON_SOCKET",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "DAEMON_PID_FILE",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DAEMON_LOG_OUT",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "DAEMON_LOG_ERR",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "HTTP_LOG_OUT",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "HTTP_LOG_ERR",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "ensureDaemonDir",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "clearStaleSocket",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "daemonRequest",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureDaemonDir",
+          "callee": "existsSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "ensureDaemonDir",
+          "callee": "mkdirSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "platform",
+          "lineNumber": 39
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "existsSync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "httpRequest",
+          "lineNumber": 42
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "res.resume",
+          "lineNumber": 45
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "resolve",
+          "lineNumber": 46
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "req.on",
+          "lineNumber": 49
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "resolve",
+          "lineNumber": 49
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "req.on",
+          "lineNumber": 50
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "req.destroy",
+          "lineNumber": 51
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "resolve",
+          "lineNumber": 52
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "req.end",
+          "lineNumber": 54
+        },
+        {
+          "caller": "clearStaleSocket",
+          "callee": "unlinkSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "JSON.stringify",
+          "lineNumber": 78
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "httpRequest",
+          "lineNumber": 79
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 85
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "res.setEncoding",
+          "lineNumber": 91
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "res.on",
+          "lineNumber": 92
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "res.on",
+          "lineNumber": 93
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "JSON.parse",
+          "lineNumber": 96
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "resolve",
+          "lineNumber": 100
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "req.on",
+          "lineNumber": 104
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "req.on",
+          "lineNumber": 105
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "req.destroy",
+          "lineNumber": 106
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "req.write",
+          "lineNumber": 108
+        },
+        {
+          "caller": "daemonRequest",
+          "callee": "req.end",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/server.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "log",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "...args"
+          ]
+        },
+        {
+          "name": "sendJson",
+          "startLine": 21,
+          "endLine": 25,
+          "params": [
+            "res",
+            "data",
+            "status"
+          ]
+        },
+        {
+          "name": "runServer",
+          "startLine": 27,
+          "endLine": 68,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SERVER_PORT",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "SERVER_VERSION",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "runServer",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "log",
+          "callee": "new Date().toISOString",
+          "lineNumber": 17
+        },
+        {
+          "caller": "log",
+          "callee": "console.log",
+          "lineNumber": 18
+        },
+        {
+          "caller": "sendJson",
+          "callee": "res.setHeader",
+          "lineNumber": 23
+        },
+        {
+          "caller": "sendJson",
+          "callee": "res.end",
+          "lineNumber": 24
+        },
+        {
+          "caller": "sendJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 24
+        },
+        {
+          "caller": "runServer",
+          "callee": "createServer",
+          "lineNumber": 28
+        },
+        {
+          "caller": "runServer",
+          "callee": "httpRequest",
+          "lineNumber": 29
+        },
+        {
+          "caller": "runServer",
+          "callee": "Object.entries",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runServer",
+          "callee": "res.setHeader",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runServer",
+          "callee": "uRes.pipe",
+          "lineNumber": 42
+        },
+        {
+          "caller": "runServer",
+          "callee": "upstream.on",
+          "lineNumber": 45
+        },
+        {
+          "caller": "runServer",
+          "callee": "log",
+          "lineNumber": 46
+        },
+        {
+          "caller": "runServer",
+          "callee": "sendJson",
+          "lineNumber": 47
+        },
+        {
+          "caller": "runServer",
+          "callee": "upstream.on",
+          "lineNumber": 58
+        },
+        {
+          "caller": "runServer",
+          "callee": "upstream.destroy",
+          "lineNumber": 59
+        },
+        {
+          "caller": "runServer",
+          "callee": "sendJson",
+          "lineNumber": 60
+        },
+        {
+          "caller": "runServer",
+          "callee": "req.pipe",
+          "lineNumber": 62
+        },
+        {
+          "caller": "runServer",
+          "callee": "proxy.listen",
+          "lineNumber": 65
+        },
+        {
+          "caller": "runServer",
+          "callee": "log",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/service/common.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "resolveExecutionPaths",
+          "startLine": 20,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "daemonHealth",
+          "startLine": 39,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "httpUp",
+          "startLine": 49,
+          "endLine": 58,
+          "params": [
+            "port"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveExecutionPaths",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "daemonHealth",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "httpUp",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveExecutionPaths",
+          "callee": "fileURLToPath",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolveExecutionPaths",
+          "callee": "createRequire",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolveExecutionPaths",
+          "callee": "require.resolve",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveExecutionPaths",
+          "callee": "console.error",
+          "lineNumber": 29
+        },
+        {
+          "caller": "resolveExecutionPaths",
+          "callee": "process.exit",
+          "lineNumber": 32
+        },
+        {
+          "caller": "daemonHealth",
+          "callee": "daemonRequest",
+          "lineNumber": 41
+        },
+        {
+          "caller": "httpUp",
+          "callee": "fetch",
+          "lineNumber": 51
+        },
+        {
+          "caller": "httpUp",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/service/darwin.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 222,
+      "nonEmptyLines": 202,
+      "functions": [
+        {
+          "name": "uid",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "plistFor",
+          "startLine": 41,
+          "endLine": 62,
+          "params": [
+            "label",
+            "args",
+            "stdout",
+            "stderr"
+          ]
+        },
+        {
+          "name": "writePlist",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "label",
+            "plistPath",
+            "args",
+            "out",
+            "err"
+          ]
+        },
+        {
+          "name": "bootstrap",
+          "startLine": 69,
+          "endLine": 82,
+          "params": [
+            "label",
+            "plistPath"
+          ]
+        },
+        {
+          "name": "teardown",
+          "startLine": 84,
+          "endLine": 92,
+          "params": [
+            "label",
+            "plistPath"
+          ]
+        },
+        {
+          "name": "installDaemon",
+          "startLine": 94,
+          "endLine": 103,
+          "params": [
+            "paths"
+          ]
+        },
+        {
+          "name": "installHttp",
+          "startLine": 105,
+          "endLine": 114,
+          "params": [
+            "paths"
+          ]
+        },
+        {
+          "name": "removeLegacy",
+          "startLine": 120,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "setup",
+          "startLine": 126,
+          "endLine": 138,
+          "params": []
+        },
+        {
+          "name": "enableHttp",
+          "startLine": 140,
+          "endLine": 149,
+          "params": []
+        },
+        {
+          "name": "killDaemon",
+          "startLine": 151,
+          "endLine": 168,
+          "params": []
+        },
+        {
+          "name": "disableHttp",
+          "startLine": 170,
+          "endLine": 177,
+          "params": []
+        },
+        {
+          "name": "serverStatus",
+          "startLine": 179,
+          "endLine": 198,
+          "params": []
+        },
+        {
+          "name": "daemonStatus",
+          "startLine": 200,
+          "endLine": 222,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "setup",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "enableHttp",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "killDaemon",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "disableHttp",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "serverStatus",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "daemonStatus",
+          "line": 200,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "uid",
+          "callee": "f.call",
+          "lineNumber": 38
+        },
+        {
+          "caller": "plistFor",
+          "callee": "args\n    .map((a) => `    <string>${a.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\")}</string>`)\n    .join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "plistFor",
+          "callee": "args\n    .map",
+          "lineNumber": 42
+        },
+        {
+          "caller": "plistFor",
+          "callee": "a.replace(/&/g, \"&amp;\").replace",
+          "lineNumber": 43
+        },
+        {
+          "caller": "plistFor",
+          "callee": "a.replace",
+          "lineNumber": 43
+        },
+        {
+          "caller": "writePlist",
+          "callee": "mkdirSync",
+          "lineNumber": 65
+        },
+        {
+          "caller": "writePlist",
+          "callee": "writeFileSync",
+          "lineNumber": 66
+        },
+        {
+          "caller": "writePlist",
+          "callee": "plistFor",
+          "lineNumber": 66
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "spawnSync",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "uid",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "spawnSync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "spawnSync",
+          "lineNumber": 74
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "uid",
+          "lineNumber": 74
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "spawnSync",
+          "lineNumber": 76
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "console.error",
+          "lineNumber": 78
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "process.exit",
+          "lineNumber": 79
+        },
+        {
+          "caller": "teardown",
+          "callee": "spawnSync",
+          "lineNumber": 85
+        },
+        {
+          "caller": "teardown",
+          "callee": "uid",
+          "lineNumber": 85
+        },
+        {
+          "caller": "teardown",
+          "callee": "spawnSync",
+          "lineNumber": 86
+        },
+        {
+          "caller": "teardown",
+          "callee": "existsSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "teardown",
+          "callee": "unlinkSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "installDaemon",
+          "callee": "writePlist",
+          "lineNumber": 95
+        },
+        {
+          "caller": "installDaemon",
+          "callee": "bootstrap",
+          "lineNumber": 102
+        },
+        {
+          "caller": "installHttp",
+          "callee": "writePlist",
+          "lineNumber": 106
+        },
+        {
+          "caller": "installHttp",
+          "callee": "bootstrap",
+          "lineNumber": 113
+        },
+        {
+          "caller": "removeLegacy",
+          "callee": "existsSync",
+          "lineNumber": 121
+        },
+        {
+          "caller": "removeLegacy",
+          "callee": "console.log",
+          "lineNumber": 122
+        },
+        {
+          "caller": "removeLegacy",
+          "callee": "teardown",
+          "lineNumber": 123
+        },
+        {
+          "caller": "setup",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 127
+        },
+        {
+          "caller": "setup",
+          "callee": "removeLegacy",
+          "lineNumber": 128
+        },
+        {
+          "caller": "setup",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 129
+        },
+        {
+          "caller": "setup",
+          "callee": "installDaemon",
+          "lineNumber": 130
+        },
+        {
+          "caller": "setup",
+          "callee": "installHttp",
+          "lineNumber": 131
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 132
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 133
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 134
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 135
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 136
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 137
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 141
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "existsSync",
+          "lineNumber": 142
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.error",
+          "lineNumber": 143
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "process.exit",
+          "lineNumber": 144
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 146
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "installHttp",
+          "lineNumber": 147
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.log",
+          "lineNumber": 148
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "existsSync",
+          "lineNumber": 152
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.error",
+          "lineNumber": 153
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "process.exit",
+          "lineNumber": 154
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "uid",
+          "lineNumber": 160
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "spawnSync",
+          "lineNumber": 161
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "bootstrap",
+          "lineNumber": 165
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.log",
+          "lineNumber": 167
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "existsSync",
+          "lineNumber": 171
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 172
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "teardown",
+          "lineNumber": 175
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 176
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "existsSync",
+          "lineNumber": 180
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "spawnSync",
+          "lineNumber": 181
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "httpUp",
+          "lineNumber": 183
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "console.log",
+          "lineNumber": 185
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 186
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "existsSync",
+          "lineNumber": 201
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "spawnSync",
+          "lineNumber": 202
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "existsSync",
+          "lineNumber": 204
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "daemonHealth",
+          "lineNumber": 205
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "console.log",
+          "lineNumber": 207
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 208
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/service/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "backend",
+          "startLine": 20,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "setup",
+          "startLine": 37,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "enableHttp",
+          "startLine": 38,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "disableHttp",
+          "startLine": 39,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "daemonStatus",
+          "startLine": 40,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "serverStatus",
+          "startLine": 41,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "killDaemon",
+          "startLine": 42,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "setup",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "enableHttp",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "disableHttp",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "daemonStatus",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "serverStatus",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "killDaemon",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "backend",
+          "callee": "console.error",
+          "lineNumber": 29
+        },
+        {
+          "caller": "backend",
+          "callee": "process.exit",
+          "lineNumber": 33
+        },
+        {
+          "caller": "setup",
+          "callee": "backend().setup",
+          "lineNumber": 37
+        },
+        {
+          "caller": "setup",
+          "callee": "backend",
+          "lineNumber": 37
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "backend().enableHttp",
+          "lineNumber": 38
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "backend",
+          "lineNumber": 38
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "backend().disableHttp",
+          "lineNumber": 39
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "backend",
+          "lineNumber": 39
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "backend().daemonStatus",
+          "lineNumber": 40
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "backend",
+          "lineNumber": 40
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "backend().serverStatus",
+          "lineNumber": 41
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "backend",
+          "lineNumber": 41
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "backend().killDaemon",
+          "lineNumber": 42
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "backend",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/service/linux.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 190,
+      "functions": [
+        {
+          "name": "shellQuote",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "unitFor",
+          "startLine": 38,
+          "endLine": 53,
+          "params": [
+            "description",
+            "args"
+          ]
+        },
+        {
+          "name": "systemctl",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "args",
+            "opts"
+          ]
+        },
+        {
+          "name": "ensureSystemdAvailable",
+          "startLine": 64,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "installUnit",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "unit",
+            "unitPath",
+            "body"
+          ]
+        },
+        {
+          "name": "removeUnit",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "unit",
+            "unitPath"
+          ]
+        },
+        {
+          "name": "unitActive",
+          "startLine": 93,
+          "endLine": 95,
+          "params": [
+            "unit"
+          ]
+        },
+        {
+          "name": "lingerHint",
+          "startLine": 97,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "setup",
+          "startLine": 113,
+          "endLine": 141,
+          "params": []
+        },
+        {
+          "name": "enableHttp",
+          "startLine": 143,
+          "endLine": 160,
+          "params": []
+        },
+        {
+          "name": "killDaemon",
+          "startLine": 162,
+          "endLine": 172,
+          "params": []
+        },
+        {
+          "name": "disableHttp",
+          "startLine": 174,
+          "endLine": 181,
+          "params": []
+        },
+        {
+          "name": "daemonStatus",
+          "startLine": 183,
+          "endLine": 198,
+          "params": []
+        },
+        {
+          "name": "serverStatus",
+          "startLine": 200,
+          "endLine": 212,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "setup",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "enableHttp",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "killDaemon",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "disableHttp",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "daemonStatus",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "serverStatus",
+          "line": 200,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shellQuote",
+          "callee": "s.replace(/\\\\/g, \"\\\\\\\\\").replace",
+          "lineNumber": 35
+        },
+        {
+          "caller": "shellQuote",
+          "callee": "s.replace",
+          "lineNumber": 35
+        },
+        {
+          "caller": "unitFor",
+          "callee": "args.map(shellQuote).join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "unitFor",
+          "callee": "args.map",
+          "lineNumber": 39
+        },
+        {
+          "caller": "systemctl",
+          "callee": "spawnSync",
+          "lineNumber": 56
+        },
+        {
+          "caller": "systemctl",
+          "callee": "console.error",
+          "lineNumber": 58
+        },
+        {
+          "caller": "systemctl",
+          "callee": "args.join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "systemctl",
+          "callee": "process.exit",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ensureSystemdAvailable",
+          "callee": "spawnSync",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ensureSystemdAvailable",
+          "callee": "/Failed to connect|No such file/i.test",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ensureSystemdAvailable",
+          "callee": "console.error",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ensureSystemdAvailable",
+          "callee": "process.exit",
+          "lineNumber": 74
+        },
+        {
+          "caller": "installUnit",
+          "callee": "mkdirSync",
+          "lineNumber": 79
+        },
+        {
+          "caller": "installUnit",
+          "callee": "writeFileSync",
+          "lineNumber": 80
+        },
+        {
+          "caller": "installUnit",
+          "callee": "systemctl",
+          "lineNumber": 81
+        },
+        {
+          "caller": "installUnit",
+          "callee": "systemctl",
+          "lineNumber": 82
+        },
+        {
+          "caller": "removeUnit",
+          "callee": "spawnSync",
+          "lineNumber": 86
+        },
+        {
+          "caller": "removeUnit",
+          "callee": "existsSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "removeUnit",
+          "callee": "unlinkSync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "removeUnit",
+          "callee": "systemctl",
+          "lineNumber": 90
+        },
+        {
+          "caller": "unitActive",
+          "callee": "spawnSync",
+          "lineNumber": 94
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "userInfo",
+          "lineNumber": 101
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "spawnSync",
+          "lineNumber": 102
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "r.stdout.includes",
+          "lineNumber": 103
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "console.log",
+          "lineNumber": 104
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "console.log",
+          "lineNumber": 105
+        },
+        {
+          "caller": "lingerHint",
+          "callee": "console.log",
+          "lineNumber": 106
+        },
+        {
+          "caller": "setup",
+          "callee": "ensureSystemdAvailable",
+          "lineNumber": 114
+        },
+        {
+          "caller": "setup",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 115
+        },
+        {
+          "caller": "setup",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 116
+        },
+        {
+          "caller": "setup",
+          "callee": "installUnit",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setup",
+          "callee": "unitFor",
+          "lineNumber": 120
+        },
+        {
+          "caller": "setup",
+          "callee": "installUnit",
+          "lineNumber": 125
+        },
+        {
+          "caller": "setup",
+          "callee": "unitFor",
+          "lineNumber": 128
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 133
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 134
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 135
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 136
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 137
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 138
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 139
+        },
+        {
+          "caller": "setup",
+          "callee": "lingerHint",
+          "lineNumber": 140
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "ensureSystemdAvailable",
+          "lineNumber": 144
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 145
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "existsSync",
+          "lineNumber": 146
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.error",
+          "lineNumber": 147
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "process.exit",
+          "lineNumber": 148
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 150
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "installUnit",
+          "lineNumber": 151
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "unitFor",
+          "lineNumber": 154
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.log",
+          "lineNumber": 159
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "existsSync",
+          "lineNumber": 163
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.error",
+          "lineNumber": 164
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "process.exit",
+          "lineNumber": 165
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "systemctl",
+          "lineNumber": 170
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.log",
+          "lineNumber": 171
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "existsSync",
+          "lineNumber": 175
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 176
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "removeUnit",
+          "lineNumber": 179
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 180
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "existsSync",
+          "lineNumber": 184
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "unitActive",
+          "lineNumber": 185
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "existsSync",
+          "lineNumber": 186
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "daemonHealth",
+          "lineNumber": 187
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "console.log",
+          "lineNumber": 189
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 189
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "existsSync",
+          "lineNumber": 201
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "unitActive",
+          "lineNumber": 202
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "httpUp",
+          "lineNumber": 203
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "console.log",
+          "lineNumber": 205
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 205
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/service/windows.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 228,
+      "nonEmptyLines": 206,
+      "functions": [
+        {
+          "name": "xmlEscape",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "joinArgs",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "principalUser",
+          "startLine": 39,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "taskXml",
+          "startLine": 49,
+          "endLine": 105,
+          "params": [
+            "command",
+            "args"
+          ]
+        },
+        {
+          "name": "writeTaskXmlFile",
+          "startLine": 107,
+          "endLine": 114,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "schtasks",
+          "startLine": 116,
+          "endLine": 123,
+          "params": [
+            "args",
+            "opts"
+          ]
+        },
+        {
+          "name": "installTask",
+          "startLine": 125,
+          "endLine": 134,
+          "params": [
+            "taskName",
+            "args"
+          ]
+        },
+        {
+          "name": "removeTask",
+          "startLine": 136,
+          "endLine": 139,
+          "params": [
+            "taskName"
+          ]
+        },
+        {
+          "name": "taskExists",
+          "startLine": 141,
+          "endLine": 143,
+          "params": [
+            "taskName"
+          ]
+        },
+        {
+          "name": "taskRunning",
+          "startLine": 145,
+          "endLine": 151,
+          "params": [
+            "taskName"
+          ]
+        },
+        {
+          "name": "setup",
+          "startLine": 153,
+          "endLine": 164,
+          "params": []
+        },
+        {
+          "name": "enableHttp",
+          "startLine": 166,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "killDaemon",
+          "startLine": 177,
+          "endLine": 188,
+          "params": []
+        },
+        {
+          "name": "disableHttp",
+          "startLine": 190,
+          "endLine": 197,
+          "params": []
+        },
+        {
+          "name": "daemonStatus",
+          "startLine": 199,
+          "endLine": 214,
+          "params": []
+        },
+        {
+          "name": "serverStatus",
+          "startLine": 216,
+          "endLine": 228,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "setup",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "enableHttp",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "killDaemon",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "disableHttp",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "daemonStatus",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "serverStatus",
+          "line": 216,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "xmlEscape",
+          "callee": "s.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\").replace",
+          "lineNumber": 29
+        },
+        {
+          "caller": "xmlEscape",
+          "callee": "s.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace",
+          "lineNumber": 29
+        },
+        {
+          "caller": "xmlEscape",
+          "callee": "s.replace(/&/g, \"&amp;\").replace",
+          "lineNumber": 29
+        },
+        {
+          "caller": "xmlEscape",
+          "callee": "s.replace",
+          "lineNumber": 29
+        },
+        {
+          "caller": "joinArgs",
+          "callee": "args.map((a) => /\\s/.test(a) ? `\"${a.replace(/\"/g, '\\\\\"')}\"` : a).join",
+          "lineNumber": 36
+        },
+        {
+          "caller": "joinArgs",
+          "callee": "args.map",
+          "lineNumber": 36
+        },
+        {
+          "caller": "joinArgs",
+          "callee": "/\\s/.test",
+          "lineNumber": 36
+        },
+        {
+          "caller": "joinArgs",
+          "callee": "a.replace",
+          "lineNumber": 36
+        },
+        {
+          "caller": "taskXml",
+          "callee": "xmlEscape",
+          "lineNumber": 50
+        },
+        {
+          "caller": "taskXml",
+          "callee": "xmlEscape",
+          "lineNumber": 51
+        },
+        {
+          "caller": "taskXml",
+          "callee": "joinArgs",
+          "lineNumber": 51
+        },
+        {
+          "caller": "taskXml",
+          "callee": "xmlEscape",
+          "lineNumber": 52
+        },
+        {
+          "caller": "taskXml",
+          "callee": "principalUser",
+          "lineNumber": 52
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "join",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "tmpdir",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "Date.now",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "Math.floor",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "Math.random",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "taskXml",
+          "lineNumber": 111
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "writeFileSync",
+          "lineNumber": 112
+        },
+        {
+          "caller": "writeTaskXmlFile",
+          "callee": "Buffer.from",
+          "lineNumber": 112
+        },
+        {
+          "caller": "schtasks",
+          "callee": "spawnSync",
+          "lineNumber": 117
+        },
+        {
+          "caller": "schtasks",
+          "callee": "console.error",
+          "lineNumber": 119
+        },
+        {
+          "caller": "schtasks",
+          "callee": "args.join",
+          "lineNumber": 119
+        },
+        {
+          "caller": "schtasks",
+          "callee": "process.exit",
+          "lineNumber": 120
+        },
+        {
+          "caller": "installTask",
+          "callee": "writeTaskXmlFile",
+          "lineNumber": 126
+        },
+        {
+          "caller": "installTask",
+          "callee": "schtasks",
+          "lineNumber": 128
+        },
+        {
+          "caller": "installTask",
+          "callee": "schtasks",
+          "lineNumber": 130
+        },
+        {
+          "caller": "installTask",
+          "callee": "unlinkSync",
+          "lineNumber": 132
+        },
+        {
+          "caller": "removeTask",
+          "callee": "schtasks",
+          "lineNumber": 137
+        },
+        {
+          "caller": "removeTask",
+          "callee": "schtasks",
+          "lineNumber": 138
+        },
+        {
+          "caller": "taskExists",
+          "callee": "schtasks",
+          "lineNumber": 142
+        },
+        {
+          "caller": "taskRunning",
+          "callee": "schtasks",
+          "lineNumber": 147
+        },
+        {
+          "caller": "taskRunning",
+          "callee": "(r.stdout || \"\").trim().split(/\\r?\\n/).pop",
+          "lineNumber": 149
+        },
+        {
+          "caller": "taskRunning",
+          "callee": "(r.stdout || \"\").trim().split",
+          "lineNumber": 149
+        },
+        {
+          "caller": "taskRunning",
+          "callee": "(r.stdout || \"\").trim",
+          "lineNumber": 149
+        },
+        {
+          "caller": "taskRunning",
+          "callee": "/\"Running\"\\s*$/i.test",
+          "lineNumber": 150
+        },
+        {
+          "caller": "setup",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 154
+        },
+        {
+          "caller": "setup",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 155
+        },
+        {
+          "caller": "setup",
+          "callee": "installTask",
+          "lineNumber": 156
+        },
+        {
+          "caller": "setup",
+          "callee": "installTask",
+          "lineNumber": 157
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 158
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 159
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 161
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 162
+        },
+        {
+          "caller": "setup",
+          "callee": "console.log",
+          "lineNumber": 163
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "ensureDaemonDir",
+          "lineNumber": 167
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "taskExists",
+          "lineNumber": 168
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.error",
+          "lineNumber": 169
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "process.exit",
+          "lineNumber": 170
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "resolveExecutionPaths",
+          "lineNumber": 172
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "installTask",
+          "lineNumber": 173
+        },
+        {
+          "caller": "enableHttp",
+          "callee": "console.log",
+          "lineNumber": 174
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "taskExists",
+          "lineNumber": 178
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.error",
+          "lineNumber": 179
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "process.exit",
+          "lineNumber": 180
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "schtasks",
+          "lineNumber": 185
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "schtasks",
+          "lineNumber": 186
+        },
+        {
+          "caller": "killDaemon",
+          "callee": "console.log",
+          "lineNumber": 187
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "taskExists",
+          "lineNumber": 191
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 192
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "removeTask",
+          "lineNumber": 195
+        },
+        {
+          "caller": "disableHttp",
+          "callee": "console.log",
+          "lineNumber": 196
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "taskExists",
+          "lineNumber": 200
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "taskRunning",
+          "lineNumber": 201
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "daemonHealth",
+          "lineNumber": 204
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "console.log",
+          "lineNumber": 206
+        },
+        {
+          "caller": "daemonStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 206
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "taskExists",
+          "lineNumber": 217
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "taskRunning",
+          "lineNumber": 218
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "httpUp",
+          "lineNumber": 219
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "console.log",
+          "lineNumber": 221
+        },
+        {
+          "caller": "serverStatus",
+          "callee": "JSON.stringify",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 300,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "runTest",
+          "startLine": 76,
+          "endLine": 102,
+          "params": [
+            "which"
+          ]
+        },
+        {
+          "name": "pickComponent",
+          "startLine": 104,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "isComponent",
+          "startLine": 117,
+          "endLine": 119,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "runOne",
+          "startLine": 121,
+          "endLine": 135,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "testSerial",
+          "startLine": 139,
+          "endLine": 156,
+          "params": []
+        },
+        {
+          "name": "testOled",
+          "startLine": 158,
+          "endLine": 186,
+          "params": []
+        },
+        {
+          "name": "i2cAddrSeen",
+          "startLine": 191,
+          "endLine": 208,
+          "params": [
+            "bus",
+            "addr"
+          ]
+        },
+        {
+          "name": "testBuzzer",
+          "startLine": 210,
+          "endLine": 230,
+          "params": []
+        },
+        {
+          "name": "testImu",
+          "startLine": 232,
+          "endLine": 251,
+          "params": []
+        },
+        {
+          "name": "header",
+          "startLine": 255,
+          "endLine": 266,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "troubleshoot",
+          "startLine": 268,
+          "endLine": 271,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "summary",
+          "startLine": 273,
+          "endLine": 278,
+          "params": [
+            "fails",
+            "passes"
+          ]
+        },
+        {
+          "name": "describe",
+          "startLine": 280,
+          "endLine": 283,
+          "params": [
+            "r"
+          ]
+        },
+        {
+          "name": "askYesNo",
+          "startLine": 287,
+          "endLine": 296,
+          "params": [
+            "question"
+          ]
+        },
+        {
+          "name": "sleep",
+          "startLine": 298,
+          "endLine": 300,
+          "params": [
+            "ms"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runTest",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runTest",
+          "callee": "pickComponent",
+          "lineNumber": 77
+        },
+        {
+          "caller": "runTest",
+          "callee": "runOne",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runTest",
+          "callee": "console.log",
+          "lineNumber": 82
+        },
+        {
+          "caller": "runTest",
+          "callee": "summary",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runTest",
+          "callee": "process.exit",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runTest",
+          "callee": "runOne",
+          "lineNumber": 86
+        },
+        {
+          "caller": "runTest",
+          "callee": "runOne",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runTest",
+          "callee": "runOne",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runTest",
+          "callee": "results.filter",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runTest",
+          "callee": "summary",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runTest",
+          "callee": "process.exit",
+          "lineNumber": 92
+        },
+        {
+          "caller": "runTest",
+          "callee": "isComponent",
+          "lineNumber": 95
+        },
+        {
+          "caller": "runTest",
+          "callee": "console.error",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runTest",
+          "callee": "ORDER.join",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runTest",
+          "callee": "process.exit",
+          "lineNumber": 97
+        },
+        {
+          "caller": "runTest",
+          "callee": "runOne",
+          "lineNumber": 100
+        },
+        {
+          "caller": "runTest",
+          "callee": "process.exit",
+          "lineNumber": 101
+        },
+        {
+          "caller": "pickComponent",
+          "callee": "select",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isComponent",
+          "callee": "(ORDER as readonly string[]).includes",
+          "lineNumber": 118
+        },
+        {
+          "caller": "runOne",
+          "callee": "header",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runOne",
+          "callee": "testSerial",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runOne",
+          "callee": "testOled",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runOne",
+          "callee": "testBuzzer",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runOne",
+          "callee": "testImu",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runOne",
+          "callee": "console.log",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runOne",
+          "callee": "console.log",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runOne",
+          "callee": "troubleshoot",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testSerial",
+          "callee": "console.log",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testSerial",
+          "callee": "client.ping",
+          "lineNumber": 143
+        },
+        {
+          "caller": "testSerial",
+          "callee": "console.log",
+          "lineNumber": 145
+        },
+        {
+          "caller": "testSerial",
+          "callee": "console.log",
+          "lineNumber": 149
+        },
+        {
+          "caller": "testSerial",
+          "callee": "describe",
+          "lineNumber": 149
+        },
+        {
+          "caller": "testSerial",
+          "callee": "JSON.stringify",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testSerial",
+          "callee": "console.log",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testSerial",
+          "callee": "/pong/i.test",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testOled",
+          "callee": "i2cAddrSeen",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testOled",
+          "callee": "client.text",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testOled",
+          "callee": "console.log",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testOled",
+          "callee": "describe",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testOled",
+          "callee": "sleep",
+          "lineNumber": 184
+        },
+        {
+          "caller": "testOled",
+          "callee": "askYesNo",
+          "lineNumber": 185
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "client.i2c",
+          "lineNumber": 194
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "JSON.parse",
+          "lineNumber": 202
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "list.map((s) => s.toUpperCase()).includes",
+          "lineNumber": 207
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "list.map",
+          "lineNumber": 207
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "s.toUpperCase",
+          "lineNumber": 207
+        },
+        {
+          "caller": "i2cAddrSeen",
+          "callee": "addr.toUpperCase",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "console.log",
+          "lineNumber": 215
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "client.face",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "console.log",
+          "lineNumber": 218
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "describe",
+          "lineNumber": 218
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "sleep",
+          "lineNumber": 221
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "client.face",
+          "lineNumber": 222
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "console.log",
+          "lineNumber": 224
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "describe",
+          "lineNumber": 224
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "sleep",
+          "lineNumber": 228
+        },
+        {
+          "caller": "testBuzzer",
+          "callee": "askYesNo",
+          "lineNumber": 229
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 236
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 237
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 238
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 239
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 240
+        },
+        {
+          "caller": "testImu",
+          "callee": "sleep",
+          "lineNumber": 241
+        },
+        {
+          "caller": "testImu",
+          "callee": "askYesNo",
+          "lineNumber": 242
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 245
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 246
+        },
+        {
+          "caller": "testImu",
+          "callee": "console.log",
+          "lineNumber": 247
+        },
+        {
+          "caller": "testImu",
+          "callee": "sleep",
+          "lineNumber": 248
+        },
+        {
+          "caller": "testImu",
+          "callee": "askYesNo",
+          "lineNumber": 249
+        },
+        {
+          "caller": "header",
+          "callee": "console.log",
+          "lineNumber": 262
+        },
+        {
+          "caller": "header",
+          "callee": "console.log",
+          "lineNumber": 263
+        },
+        {
+          "caller": "header",
+          "callee": "console.log",
+          "lineNumber": 264
+        },
+        {
+          "caller": "header",
+          "callee": "console.log",
+          "lineNumber": 265
+        },
+        {
+          "caller": "troubleshoot",
+          "callee": "console.log",
+          "lineNumber": 269
+        },
+        {
+          "caller": "troubleshoot",
+          "callee": "console.log",
+          "lineNumber": 270
+        },
+        {
+          "caller": "summary",
+          "callee": "console.log",
+          "lineNumber": 274
+        },
+        {
+          "caller": "summary",
+          "callee": "console.log",
+          "lineNumber": 275
+        },
+        {
+          "caller": "summary",
+          "callee": "console.log",
+          "lineNumber": 276
+        },
+        {
+          "caller": "summary",
+          "callee": "console.log",
+          "lineNumber": 277
+        },
+        {
+          "caller": "describe",
+          "callee": "JSON.stringify",
+          "lineNumber": 281
+        },
+        {
+          "caller": "askYesNo",
+          "callee": "select",
+          "lineNumber": 288
+        },
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 299
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "cli/src/transport.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "isBanner",
+          "startLine": 86,
+          "endLine": 90,
+          "params": [
+            "line"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SerialTransport",
+          "startLine": 13,
+          "endLine": 84,
+          "methods": [
+            "constructor",
+            "isOpen",
+            "open",
+            "send",
+            "close"
+          ],
+          "properties": [
+            "port",
+            "parser",
+            "opened",
+            "bufferedLines"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SerialTransport",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "open",
+          "callee": "port.open",
+          "lineNumber": 31
+        },
+        {
+          "caller": "open",
+          "callee": "reject",
+          "lineNumber": 32
+        },
+        {
+          "caller": "open",
+          "callee": "port.pipe",
+          "lineNumber": 34
+        },
+        {
+          "caller": "open",
+          "callee": "this.parser.on",
+          "lineNumber": 35
+        },
+        {
+          "caller": "open",
+          "callee": "this.bufferedLines.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "open",
+          "callee": "line.replace",
+          "lineNumber": 36
+        },
+        {
+          "caller": "open",
+          "callee": "this.emit",
+          "lineNumber": 37
+        },
+        {
+          "caller": "open",
+          "callee": "port.on",
+          "lineNumber": 39
+        },
+        {
+          "caller": "open",
+          "callee": "this.emit",
+          "lineNumber": 41
+        },
+        {
+          "caller": "open",
+          "callee": "port.on",
+          "lineNumber": 43
+        },
+        {
+          "caller": "open",
+          "callee": "this.emit",
+          "lineNumber": 43
+        },
+        {
+          "caller": "open",
+          "callee": "resolve",
+          "lineNumber": 44
+        },
+        {
+          "caller": "onLine",
+          "callee": "raw.replace",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onLine",
+          "callee": "isBanner",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onLine",
+          "callee": "cleanup",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onLine",
+          "callee": "resolve",
+          "lineNumber": 60
+        },
+        {
+          "caller": "send",
+          "callee": "setTimeout",
+          "lineNumber": 62
+        },
+        {
+          "caller": "send",
+          "callee": "cleanup",
+          "lineNumber": 63
+        },
+        {
+          "caller": "send",
+          "callee": "resolve",
+          "lineNumber": 64
+        },
+        {
+          "caller": "cleanup",
+          "callee": "clearTimeout",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cleanup",
+          "callee": "this.parser?.off",
+          "lineNumber": 68
+        },
+        {
+          "caller": "send",
+          "callee": "this.parser!.on",
+          "lineNumber": 70
+        },
+        {
+          "caller": "send",
+          "callee": "this.port!.write",
+          "lineNumber": 71
+        },
+        {
+          "caller": "close",
+          "callee": "resolve",
+          "lineNumber": 77
+        },
+        {
+          "caller": "close",
+          "callee": "this.port.close",
+          "lineNumber": 78
+        },
+        {
+          "caller": "close",
+          "callee": "resolve",
+          "lineNumber": 80
+        },
+        {
+          "caller": "isBanner",
+          "callee": "line.startsWith",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "cli/bin/gochi.js",
+      "language": "javascript",
+      "fileCategory": "script",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

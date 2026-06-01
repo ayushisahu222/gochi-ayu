@@ -45,8 +45,8 @@ class ProceduralFace {
   void pickGaze_(uint32_t now);
   void onExpressionChanged_(uint32_t now);
 
-  ExpressionId expr_ = ExpressionId::Neutral;
-  ExpressionId pendingExpr_ = ExpressionId::Neutral;
+  ExpressionId expr_ = ExpressionId::Love;
+  ExpressionId pendingExpr_ = ExpressionId::Love;
   bool initialized_ = false;
   bool changing_ = false;  // a setExpression() blink-swap is in progress
 

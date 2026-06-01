@@ -1,0 +1,43 @@
+{
+  "projectRoot": "/Users/ayushisahu/gochi-ayu",
+  "batchFiles": [
+    {"path": "firmware/tests/buzzer/buzzer.ino", "language": "cpp", "sizeLines": 59, "fileCategory": "code"},
+    {"path": "firmware/tests/led/led.ino", "language": "cpp", "sizeLines": 57, "fileCategory": "code"},
+    {"path": "firmware/tests/mpu/mpu.ino", "language": "cpp", "sizeLines": 118, "fileCategory": "code"},
+    {"path": "firmware/tests/oled/oled.ino", "language": "cpp", "sizeLines": 66, "fileCategory": "code"},
+    {"path": "firmware/tests/wifi/wifi.ino", "language": "cpp", "sizeLines": 21, "fileCategory": "code"},
+    {"path": "firmware/tests/mpu/visualize.html", "language": "html", "sizeLines": 505, "fileCategory": "markup"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 106, "fileCategory": "docs"},
+    {"path": "HOW-TO-BUILD.md", "language": "markdown", "sizeLines": 367, "fileCategory": "docs"},
+    {"path": "HOW-TO-SETUP.md", "language": "markdown", "sizeLines": 425, "fileCategory": "docs"},
+    {"path": "firmware/README.md", "language": "markdown", "sizeLines": 179, "fileCategory": "docs"},
+    {"path": "firmware/tests/README.md", "language": "markdown", "sizeLines": 66, "fileCategory": "docs"},
+    {"path": "cli/README.md", "language": "markdown", "sizeLines": 226, "fileCategory": "docs"},
+    {"path": "skills/README.md", "language": "markdown", "sizeLines": 84, "fileCategory": "docs"},
+    {"path": "skills/tamagotchi/SKILL.md", "language": "markdown", "sizeLines": 138, "fileCategory": "docs"},
+    {"path": "Makefile", "language": "makefile", "sizeLines": 172, "fileCategory": "script"},
+    {"path": ".github/workflows/release-cli.yml", "language": "yaml", "sizeLines": 48, "fileCategory": "infra"},
+    {"path": "firmware/sketch.yaml", "language": "yaml", "sizeLines": 12, "fileCategory": "config"},
+    {"path": "firmware/arduino-cli.yaml", "language": "yaml", "sizeLines": 3, "fileCategory": "config"},
+    {"path": "firmware/.clangd", "language": "yaml", "sizeLines": 15, "fileCategory": "config"},
+    {"path": "firmware/tests/buzzer/sketch.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "firmware/tests/led/sketch.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "firmware/tests/mpu/sketch.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "firmware/tests/oled/sketch.yaml", "language": "yaml", "sizeLines": 12, "fileCategory": "config"},
+    {"path": ".clang-format", "language": "yaml", "sizeLines": 8, "fileCategory": "config"},
+    {"path": ".clang-tidy", "language": "yaml", "sizeLines": 19, "fileCategory": "config"},
+    {"path": ".env", "language": "dotenv", "sizeLines": 16, "fileCategory": "config"},
+    {"path": ".env.example", "language": "dotenv", "sizeLines": 15, "fileCategory": "config"},
+    {"path": ".gitignore", "language": "gitignore", "sizeLines": 10, "fileCategory": "config"},
+    {"path": ".zed/settings.json", "language": "json", "sizeLines": 30, "fileCategory": "config"},
+    {"path": "cli/tsconfig.json", "language": "json", "sizeLines": 16, "fileCategory": "config"},
+    {"path": "cli/package.json", "language": "json", "sizeLines": 55, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "firmware/tests/buzzer/buzzer.ino": ["firmware/src/config.h"],
+    "firmware/tests/led/led.ino": [],
+    "firmware/tests/mpu/mpu.ino": ["firmware/src/config.h"],
+    "firmware/tests/oled/oled.ino": ["firmware/src/config.h"],
+    "firmware/tests/wifi/wifi.ino": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "projectRoot": "/Users/ayushisahu/gochi-ayu",
+  "batchFiles": [
+    {"path": "firmware/firmware.ino", "language": "cpp", "sizeLines": 235, "fileCategory": "code"},
+    {"path": "firmware/src/command.cpp", "language": "cpp", "sizeLines": 94, "fileCategory": "code"},
+    {"path": "firmware/src/command.h", "language": "cpp", "sizeLines": 49, "fileCategory": "code"},
+    {"path": "firmware/src/config.h", "language": "cpp", "sizeLines": 46, "fileCategory": "code"},
+    {"path": "firmware/src/mood.cpp", "language": "cpp", "sizeLines": 29, "fileCategory": "code"},
+    {"path": "firmware/src/mood.h", "language": "cpp", "sizeLines": 22, "fileCategory": "code"},
+    {"path": "firmware/src/renderer.cpp", "language": "cpp", "sizeLines": 49, "fileCategory": "code"},
+    {"path": "firmware/src/renderer.h", "language": "cpp", "sizeLines": 58, "fileCategory": "code"},
+    {"path": "firmware/src/transport.cpp", "language": "cpp", "sizeLines": 42, "fileCategory": "code"},
+    {"path": "firmware/src/transport.h", "language": "cpp", "sizeLines": 31, "fileCategory": "code"},
+    {"path": "firmware/src/display/display.cpp", "language": "cpp", "sizeLines": 94, "fileCategory": "code"},
+    {"path": "firmware/src/display/display.h", "language": "cpp", "sizeLines": 60, "fileCategory": "code"},
+    {"path": "firmware/src/modes/desktop_mode.cpp", "language": "cpp", "sizeLines": 165, "fileCategory": "code"},
+    {"path": "firmware/src/modes/desktop_mode.h", "language": "cpp", "sizeLines": 36, "fileCategory": "code"},
+    {"path": "firmware/src/modes/free_mode.cpp", "language": "cpp", "sizeLines": 112, "fileCategory": "code"},
+    {"path": "firmware/src/modes/free_mode.h", "language": "cpp", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "firmware/src/modes/mode.h", "language": "cpp", "sizeLines": 21, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "firmware/firmware.ino": ["firmware/src/assets/expressions.h","firmware/src/assets/jingles.h","firmware/src/buzzer/buzzer.h","firmware/src/command.h","firmware/src/config.h","firmware/src/imu/motion.h","firmware/src/imu/mpu6050.h","firmware/src/modes/desktop_mode.h","firmware/src/modes/free_mode.h","firmware/src/modes/mode.h","firmware/src/mood.h","firmware/src/renderer.h","firmware/src/transport.h","firmware/src/views/view_manager.h"],
+    "firmware/src/command.cpp": ["firmware/src/command.h"],
+    "firmware/src/command.h": [],
+    "firmware/src/config.h": [],
+    "firmware/src/mood.cpp": ["firmware/src/mood.h"],
+    "firmware/src/mood.h": [],
+    "firmware/src/renderer.cpp": ["firmware/src/renderer.h","firmware/src/display/display.h"],
+    "firmware/src/renderer.h": [],
+    "firmware/src/transport.cpp": ["firmware/src/transport.h"],
+    "firmware/src/transport.h": ["firmware/src/command.h"],
+    "firmware/src/display/display.cpp": ["firmware/src/display/display.h","firmware/src/config.h"],
+    "firmware/src/display/display.h": [],
+    "firmware/src/modes/desktop_mode.cpp": ["firmware/src/modes/desktop_mode.h","firmware/src/assets/expressions.h","firmware/src/command.h","firmware/src/imu/mpu6050.h","firmware/src/renderer.h","firmware/src/transport.h","firmware/src/views/image_view.h","firmware/src/views/view_manager.h"],
+    "firmware/src/modes/desktop_mode.h": ["firmware/src/mood.h","firmware/src/modes/mode.h"],
+    "firmware/src/modes/free_mode.cpp": ["firmware/src/modes/free_mode.h","firmware/src/assets/expressions.h","firmware/src/assets/jingles.h","firmware/src/buzzer/buzzer.h","firmware/src/views/view_manager.h"],
+    "firmware/src/modes/free_mode.h": ["firmware/src/mood.h","firmware/src/modes/mode.h"],
+    "firmware/src/modes/mode.h": []
+  }
+}

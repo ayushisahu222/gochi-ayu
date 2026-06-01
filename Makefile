@@ -49,11 +49,23 @@ EXTRA_DEFINES :=
 ifeq ($(ROTATED_DISPLAY),1)
   EXTRA_DEFINES += -DROTATED_DISPLAY=1
 endif
+# WiFi credentials for the NTP clock (powers the timed water reminder).
+# Passed as bare tokens (-DWIFI_SSID=mynet); clock.cpp stringizes them
+# with the standard #-macro trick, which sidesteps the nested make/
+# arduino-cli/shell quoting that mangles embedded \" sequences. Only
+# emitted when set, so a build with no .env still compiles (clock stays
+# dormant). Values with spaces or shell-specials aren't supported here.
+ifneq ($(strip $(WIFI_SSID)),)
+  EXTRA_DEFINES += -DWIFI_SSID=$(WIFI_SSID)
+endif
+ifneq ($(strip $(WIFI_PASS)),)
+  EXTRA_DEFINES += -DWIFI_PASS=$(WIFI_PASS)
+endif
 # Empty when no flags are set, so arduino-cli keeps its defaults.
 BUILD_PROPS := $(if $(strip $(EXTRA_DEFINES)),--build-property "build.extra_flags=$(EXTRA_DEFINES)",)
 
 .PHONY: build db flash upload erase monitor flash-monitor ports format format-check clean
-.PHONY: test-led test-oled test-buzzer test-mpu
+.PHONY: test-led test-oled test-buzzer test-mpu test-wifi
 
 ## build         — compile the sketch
 build:
@@ -78,7 +90,7 @@ upload:
 	  gochi stop >/dev/null; \
 	fi; \
 	trap '[ "$$_paused" = 1 ] && echo "→ gochi start (reacquiring)" && gochi start >/dev/null' EXIT; \
-	$(ARDUINO) upload --fqbn $(FQBN) --port $(PORT) --input-dir $(BUILD) $(SKETCH)
+	$(ARDUINO) upload --fqbn $(FQBN) --port $(PORT) --input-dir $(BUILD)
 
 ## erase         — wipe the entire flash (factory reset).
 ##                  arduino-cli has no built-in erase, so we shell out
@@ -144,17 +156,23 @@ clean:
 ## test-led       — compile + flash the LED-blink bring-up test
 test-led:
 	$(ARDUINO) compile --fqbn $(FQBN) $(BUILD_PROPS) --build-path firmware/tests/led/build firmware/tests/led
-	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/led/build firmware/tests/led
+	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/led/build
 
 ## test-oled      — compile + flash the OLED bring-up test
 test-oled:
 	$(ARDUINO) compile --fqbn $(FQBN) $(BUILD_PROPS) --build-path firmware/tests/oled/build firmware/tests/oled
-	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/oled/build firmware/tests/oled
+	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/oled/build
 
 ## test-buzzer    — compile + flash the buzzer bring-up test
 test-buzzer:
 	$(ARDUINO) compile --fqbn $(FQBN) $(BUILD_PROPS) --build-path firmware/tests/buzzer/build firmware/tests/buzzer
-	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/buzzer/build firmware/tests/buzzer
+	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/buzzer/build
+
+## test-wifi      — compile + flash the WiFi scan test, then open monitor
+test-wifi:
+	$(ARDUINO) compile --fqbn $(FQBN) $(BUILD_PROPS) --build-path firmware/tests/wifi/build firmware/tests/wifi
+	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/wifi/build
+	$(ARDUINO) monitor --port $(PORT) --config baudrate=115200
 
 ## test-mpu       — compile + flash the MPU-6050 streaming test, then
 ##                  open the live viewer in the default browser. Needs
@@ -162,5 +180,5 @@ test-buzzer:
 ##                  holding the port, `gochi stop` first.
 test-mpu:
 	$(ARDUINO) compile --fqbn $(FQBN) $(BUILD_PROPS) --build-path firmware/tests/mpu/build firmware/tests/mpu
-	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/mpu/build firmware/tests/mpu
+	$(ARDUINO) upload  --fqbn $(FQBN) --port $(PORT) --input-dir firmware/tests/mpu/build
 	@$(OPEN) firmware/tests/mpu/visualize.html

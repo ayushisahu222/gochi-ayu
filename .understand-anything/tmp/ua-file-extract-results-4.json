@@ -1,0 +1,1127 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 31,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "firmware/tests/buzzer/buzzer.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/led/led.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 50,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/mpu/mpu.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 101,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/oled/oled.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 59,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/wifi/wifi.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/mpu/visualize.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 505,
+      "nonEmptyLines": 475,
+      "metrics": {}
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 106,
+      "nonEmptyLines": 84,
+      "sections": [
+        {
+          "heading": "tamagotchi",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Toolchain",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Daily workflow",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Hardware bring-up tests",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Build-time configuration (`.env`)",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "Linting & formatting",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Board notes",
+          "level": 2,
+          "line": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "HOW-TO-BUILD.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 367,
+      "nonEmptyLines": 298,
+      "sections": [
+        {
+          "heading": "How to build a gochi",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Bill of materials",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Pin map (what we're working toward)",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Step 1 — Power rails",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Step 2 — OLED (display)",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "Step 3 — Buzzer",
+          "level": 2,
+          "line": 187
+        },
+        {
+          "heading": "Step 4 — MPU-6050 IMU",
+          "level": 2,
+          "line": 226
+        },
+        {
+          "heading": "Final wiring summary",
+          "level": 2,
+          "line": 305
+        },
+        {
+          "heading": "Troubleshooting cheat sheet",
+          "level": 2,
+          "line": 351
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "HOW-TO-SETUP.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 425,
+      "nonEmptyLines": 311,
+      "sections": [
+        {
+          "heading": "How to set up the gochi dev environment",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites everywhere",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "macOS",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Linux",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "`arduino-cli`",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Bun",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "USB serial permissions",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Windows (native)",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Tools",
+          "level": 3,
+          "line": 139
+        },
+        {
+          "heading": "USB driver",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Optional: install `make`",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Finding your COM port",
+          "level": 3,
+          "line": 185
+        },
+        {
+          "heading": "Raw flash command (no `make` needed)",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "WSL 2",
+          "level": 2,
+          "line": 240
+        },
+        {
+          "heading": "Install the Linux side",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "USB passthrough",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Shared setup: clone → install → build",
+          "level": 2,
+          "line": 282
+        },
+        {
+          "heading": "1. Clone the repo",
+          "level": 3,
+          "line": 287
+        },
+        {
+          "heading": "2. Install the ESP32 toolchain",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "3. Build the firmware",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "4. Install CLI dependencies",
+          "level": 3,
+          "line": 333
+        },
+        {
+          "heading": "5. Verify the CLI runs",
+          "level": 3,
+          "line": 340
+        },
+        {
+          "heading": "6. Optional: TypeScript typecheck",
+          "level": 3,
+          "line": 355
+        },
+        {
+          "heading": "7. Sanity check: everything compiles together",
+          "level": 3,
+          "line": 369
+        },
+        {
+          "heading": "What you don't need yet",
+          "level": 2,
+          "line": 382
+        },
+        {
+          "heading": "Common dev-setup issues",
+          "level": 2,
+          "line": 397
+        },
+        {
+          "heading": "Next: wire the hardware",
+          "level": 2,
+          "line": 420
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "firmware/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 179,
+      "nonEmptyLines": 141,
+      "sections": [
+        {
+          "heading": "Tamagotchi Firmware",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Modes",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "BOOT button",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Serial command protocol",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Free Mode",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "The image view",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "The face",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "The buzzer",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "The IMU (MPU-6050)",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "Manual test checklist",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "Bring-up tests",
+          "level": 2,
+          "line": 147
+        },
+        {
+          "heading": "Source layout",
+          "level": 2,
+          "line": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "firmware/tests/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 66,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "Hardware bring-up tests",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Sketches",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Building & flashing",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Visualising the MPU-6050",
+          "level": 2,
+          "line": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "cli/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 226,
+      "nonEmptyLines": 178,
+      "sections": [
+        {
+          "heading": "Tamagotchi CLI",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Install",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "CLI",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Daemon",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Releasing the port temporarily",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "Picking up daemon code changes",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "HTTP frontend (optional)",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "HTTP API",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "How it finds the pet",
+          "level": 2,
+          "line": 184
+        },
+        {
+          "heading": "Layout",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "Notes",
+          "level": 2,
+          "line": 213
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "skills/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 84,
+      "nonEmptyLines": 56,
+      "sections": [
+        {
+          "heading": "Tamagotchi skills",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Quick install (recommended)",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Agent paths",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Manual install",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Verifying",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "skills/tamagotchi/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 138,
+      "nonEmptyLines": 102,
+      "sections": [
+        {
+          "heading": "tamagotchi",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "1. Preflight",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "2. CLI",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "3. HTTP API",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "4. Valid values",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "5. Proactive expressive use",
+          "level": 2,
+          "line": 93
+        },
+        {
+          "heading": "6. Failure modes",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "7. Quick reference",
+          "level": 2,
+          "line": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "Makefile",
+      "language": "makefile",
+      "fileCategory": "script",
+      "totalLines": 172,
+      "nonEmptyLines": 147,
+      "steps": [
+        {
+          "name": "build",
+          "startLine": 59,
+          "endLine": 61
+        },
+        {
+          "name": "db",
+          "startLine": 63,
+          "endLine": 65
+        },
+        {
+          "name": "flash",
+          "startLine": 67,
+          "endLine": 68
+        },
+        {
+          "name": "upload",
+          "startLine": 73,
+          "endLine": 82
+        },
+        {
+          "name": "erase",
+          "startLine": 89,
+          "endLine": 116
+        },
+        {
+          "name": "monitor",
+          "startLine": 118,
+          "endLine": 120
+        },
+        {
+          "name": "flash-monitor",
+          "startLine": 122,
+          "endLine": 123
+        },
+        {
+          "name": "ports",
+          "startLine": 125,
+          "endLine": 127
+        },
+        {
+          "name": "format",
+          "startLine": 129,
+          "endLine": 131
+        },
+        {
+          "name": "format-check",
+          "startLine": 133,
+          "endLine": 135
+        },
+        {
+          "name": "clean",
+          "startLine": 137,
+          "endLine": 139
+        },
+        {
+          "name": "test-led",
+          "startLine": 145,
+          "endLine": 148
+        },
+        {
+          "name": "test-oled",
+          "startLine": 150,
+          "endLine": 153
+        },
+        {
+          "name": "test-buzzer",
+          "startLine": 155,
+          "endLine": 158
+        },
+        {
+          "name": "test-wifi",
+          "startLine": 160,
+          "endLine": 164
+        },
+        {
+          "name": "test-mpu",
+          "startLine": 169,
+          "endLine": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 16
+      }
+    },
+    {
+      "path": ".github/workflows/release-cli.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 48,
+      "nonEmptyLines": 38,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "firmware/sketch.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "default_profile",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "firmware/arduino-cli.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "sections": [
+        {
+          "heading": "board_manager",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "firmware/.clangd",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/tests/buzzer/sketch.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "default_profile",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "firmware/tests/led/sketch.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "default_profile",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "firmware/tests/mpu/sketch.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "default_profile",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "firmware/tests/oled/sketch.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "profiles",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "default_profile",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": ".clang-format",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {}
+    },
+    {
+      "path": ".clang-tidy",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": ".env",
+      "language": "dotenv",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "definitions": [
+        {
+          "name": "ROTATED_DISPLAY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 1
+      }
+    },
+    {
+      "path": ".env.example",
+      "language": "dotenv",
+      "fileCategory": "config",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "definitions": [
+        {
+          "name": "ROTATED_DISPLAY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 1
+      }
+    },
+    {
+      "path": ".gitignore",
+      "language": "gitignore",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 7,
+      "metrics": {}
+    },
+    {
+      "path": ".zed/settings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 30,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "file_types",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "lsp",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "languages",
+          "level": 1,
+          "line": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "cli/tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "//",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "compilerOptions",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "include",
+          "level": 1,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "cli/package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 55,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "keywords",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "bin",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "files",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "repository",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "homepage",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "bugs",
+          "level": 1,
+          "line": 31
+        },
+        {
+          "heading": "publishConfig",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 37
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 41
+        },
+        {
+          "heading": "engines",
+          "level": 1,
+          "line": 49
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    }
+  ]
+}

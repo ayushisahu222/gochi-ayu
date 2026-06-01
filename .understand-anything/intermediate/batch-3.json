@@ -1,0 +1,490 @@
+{
+  "nodes": [
+    {
+      "id": "file:cli/src/cli.ts",
+      "type": "file",
+      "name": "cli.ts",
+      "filePath": "cli/src/cli.ts",
+      "summary": "Commander-based CLI entry point for the gochi desk pet. Defines user-facing commands (setup, face/mood/text/image, ping/health, server/daemon control, test) and internal foreground commands (daemon run, server run), routing them to the daemon over a Unix domain socket via the client module.",
+      "tags": ["entry-point", "cli", "command-dispatch"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:cli/src/client.ts",
+      "type": "file",
+      "name": "client.ts",
+      "filePath": "cli/src/client.ts",
+      "summary": "Client library that issues requests to the daemon, transparently choosing a TCP HTTP call or a Unix-domain-socket call, and exposes typed command helpers (face, text, mood, image, ping, i2c, stop, start, etc.).",
+      "tags": ["service", "ipc", "client", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/client.ts:tcpCall",
+      "type": "function",
+      "name": "tcpCall",
+      "filePath": "cli/src/client.ts",
+      "lineRange": [25, 56],
+      "summary": "Issues an HTTP request to the daemon over TCP and resolves the parsed JSON response.",
+      "tags": ["ipc", "http", "client"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/client.ts:udsCall",
+      "type": "function",
+      "name": "udsCall",
+      "filePath": "cli/src/client.ts",
+      "lineRange": [58, 87],
+      "summary": "Issues an HTTP request to the daemon over the Unix domain socket and resolves the parsed JSON response.",
+      "tags": ["ipc", "socket", "client"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/client.ts:call",
+      "type": "function",
+      "name": "call",
+      "filePath": "cli/src/client.ts",
+      "lineRange": [89, 119],
+      "summary": "Dispatches a daemon request via TCP or UDS and maps connection errors to helpful diagnostics, exiting on unrecoverable failures.",
+      "tags": ["ipc", "client", "error-handling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/daemon.ts",
+      "type": "file",
+      "name": "daemon.ts",
+      "filePath": "cli/src/daemon.ts",
+      "summary": "Long-lived daemon that owns the serial port and serves HTTP over a Unix domain socket. The Device class wraps the active SerialTransport and reacts to discovery attach/detach events; runDaemon wires the socket server, request routing, and signal cleanup.",
+      "tags": ["service", "daemon", "ipc", "serial", "singleton"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:cli/src/daemon.ts:Device",
+      "type": "class",
+      "name": "Device",
+      "filePath": "cli/src/daemon.ts",
+      "lineRange": [30, 119],
+      "summary": "Wraps the current SerialTransport and reacts to discovery attach/detach events, owning exclusive access to the ESP32 serial port with stop/start support for releasing the port during flashing.",
+      "tags": ["serial", "device-io", "state-machine"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cli/src/daemon.ts:runDaemon",
+      "type": "function",
+      "name": "runDaemon",
+      "filePath": "cli/src/daemon.ts",
+      "lineRange": [150, 284],
+      "summary": "Boots the daemon: clears stale sockets, starts device discovery, creates the UDS HTTP server, routes command/status requests to the Device, and installs signal-based cleanup.",
+      "tags": ["daemon", "ipc", "bootstrap", "http"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:cli/src/discovery.ts",
+      "type": "file",
+      "name": "discovery.ts",
+      "filePath": "cli/src/discovery.ts",
+      "summary": "Polls the serial bus for Espressif (ESP32) devices and emits attach/detach events through a watcher handle, used by the daemon to connect to the board automatically.",
+      "tags": ["utility", "serial", "device-discovery", "polling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/discovery.ts:watchDevices",
+      "type": "function",
+      "name": "watchDevices",
+      "filePath": "cli/src/discovery.ts",
+      "lineRange": [54, 90],
+      "summary": "Starts an interval poll that diffs the set of connected Espressif serial ports and fires attach/detach callbacks, returning a handle with rescan/stop control.",
+      "tags": ["serial", "device-discovery", "polling", "factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/image.ts",
+      "type": "file",
+      "name": "image.ts",
+      "filePath": "cli/src/image.ts",
+      "summary": "Converts an image file into the device's 1-bpp framebuffer format using sharp for grayscale/resize plus Floyd-Steinberg dithering or thresholding, then packs the bits MSB-first for transmission to the OLED.",
+      "tags": ["utility", "image-processing", "serialization", "dithering"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/image.ts:fileToFrameBytes",
+      "type": "function",
+      "name": "fileToFrameBytes",
+      "filePath": "cli/src/image.ts",
+      "lineRange": [43, 80],
+      "summary": "Loads an image with sharp, grayscales and resizes it to the frame dimensions, applies dithering or thresholding, and packs the result into the device framebuffer byte layout.",
+      "tags": ["image-processing", "serialization", "dithering"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/image.ts:fileToFrameBase64",
+      "type": "function",
+      "name": "fileToFrameBase64",
+      "filePath": "cli/src/image.ts",
+      "lineRange": [34, 40],
+      "summary": "Wraps fileToFrameBytes and returns the framebuffer encoded as a base64 string for inclusion in JSON requests.",
+      "tags": ["image-processing", "serialization", "base64"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cli/src/image.ts:floydSteinberg",
+      "type": "function",
+      "name": "floydSteinberg",
+      "filePath": "cli/src/image.ts",
+      "lineRange": [84, 102],
+      "summary": "Applies Floyd-Steinberg error-diffusion dithering to a luminance buffer, producing a 1-bit-per-pixel bitmap.",
+      "tags": ["image-processing", "dithering", "algorithm"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/image.ts:packMsbFirst",
+      "type": "function",
+      "name": "packMsbFirst",
+      "filePath": "cli/src/image.ts",
+      "lineRange": [113, 126],
+      "summary": "Packs a per-pixel bit array into bytes MSB-first to match the OLED framebuffer wire format.",
+      "tags": ["image-processing", "serialization", "bit-packing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/ipc.ts",
+      "type": "file",
+      "name": "ipc.ts",
+      "filePath": "cli/src/ipc.ts",
+      "summary": "Shared IPC primitives for the daemon: defines the ~/.tamagotchi paths (socket, pid, log files), ensures the daemon directory exists, clears stale sockets after a liveness probe, and provides daemonRequest to perform HTTP-over-UDS calls.",
+      "tags": ["utility", "ipc", "socket", "shared"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/ipc.ts:clearStaleSocket",
+      "type": "function",
+      "name": "clearStaleSocket",
+      "filePath": "cli/src/ipc.ts",
+      "lineRange": [38, 61],
+      "summary": "Probes the existing daemon socket for liveness and unlinks it if no daemon responds, preventing EADDRINUSE on startup.",
+      "tags": ["ipc", "socket", "cleanup"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/ipc.ts:daemonRequest",
+      "type": "function",
+      "name": "daemonRequest",
+      "filePath": "cli/src/ipc.ts",
+      "lineRange": [72, 111],
+      "summary": "Performs an HTTP request to the daemon over its Unix domain socket and resolves the parsed JSON response.",
+      "tags": ["ipc", "socket", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/server.ts",
+      "type": "file",
+      "name": "server.ts",
+      "filePath": "cli/src/server.ts",
+      "summary": "Optional HTTP frontend that runs a TCP server and reverse-proxies every request to the daemon's Unix domain socket, making the pet reachable over the network.",
+      "tags": ["service", "http-server", "reverse-proxy", "ipc"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/server.ts:runServer",
+      "type": "function",
+      "name": "runServer",
+      "filePath": "cli/src/server.ts",
+      "lineRange": [27, 68],
+      "summary": "Starts the TCP HTTP server and pipes each incoming request through to the daemon's UDS endpoint, streaming the upstream response back to the client.",
+      "tags": ["http-server", "reverse-proxy", "ipc"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/service/common.ts",
+      "type": "file",
+      "name": "common.ts",
+      "filePath": "cli/src/service/common.ts",
+      "summary": "Shared helpers for the per-OS service installers: resolves the node/CLI execution paths, queries daemon health over UDS, and probes whether the HTTP frontend is up on a given port.",
+      "tags": ["utility", "shared", "service-install"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cli/src/service/common.ts:resolveExecutionPaths",
+      "type": "function",
+      "name": "resolveExecutionPaths",
+      "filePath": "cli/src/service/common.ts",
+      "lineRange": [20, 35],
+      "summary": "Resolves the node executable and CLI entry paths to embed into generated service unit/plist/task definitions, exiting with an error if resolution fails.",
+      "tags": ["service-install", "path-resolution"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cli/src/service/darwin.ts",
+      "type": "file",
+      "name": "darwin.ts",
+      "filePath": "cli/src/service/darwin.ts",
+      "summary": "macOS service backend that generates launchd plists for the daemon and HTTP frontend and bootstraps/teardowns them via launchctl, exposing setup, enableHttp, disableHttp, killDaemon, and status queries.",
+      "tags": ["service-install", "macos", "launchd", "deployment"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cli/src/service/darwin.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "cli/src/service/darwin.ts",
+      "lineRange": [126, 138],
+      "summary": "One-time macOS install: removes legacy units then writes and bootstraps launchd plists for the daemon and HTTP frontend.",
+      "tags": ["service-install", "macos", "launchd"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/service/darwin.ts:daemonStatus",
+      "type": "function",
+      "name": "daemonStatus",
+      "filePath": "cli/src/service/darwin.ts",
+      "lineRange": [200, 222],
+      "summary": "Reports macOS daemon status by checking the launchd job and probing daemon health over the socket.",
+      "tags": ["service-install", "macos", "status"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/service/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "cli/src/service/index.ts",
+      "summary": "Barrel/dispatcher that picks the per-OS service backend (darwin/linux/windows) based on platform and re-exports the unified service API (setup, enableHttp, disableHttp, daemonStatus, serverStatus, killDaemon).",
+      "tags": ["barrel", "entry-point", "service-install", "dispatch"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:cli/src/service/index.ts:backend",
+      "type": "function",
+      "name": "backend",
+      "filePath": "cli/src/service/index.ts",
+      "lineRange": [20, 35],
+      "summary": "Selects and returns the platform-specific service backend module, exiting with an error on unsupported platforms.",
+      "tags": ["service-install", "dispatch", "factory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:cli/src/service/linux.ts",
+      "type": "file",
+      "name": "linux.ts",
+      "filePath": "cli/src/service/linux.ts",
+      "summary": "Linux service backend that generates systemd user units for the daemon and HTTP frontend and manages them via systemctl --user, with linger hints and status reporting.",
+      "tags": ["service-install", "linux", "systemd", "deployment"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cli/src/service/linux.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "cli/src/service/linux.ts",
+      "lineRange": [113, 141],
+      "summary": "One-time Linux install: verifies systemd availability and writes/enables systemd user units for the daemon and HTTP frontend.",
+      "tags": ["service-install", "linux", "systemd"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/service/linux.ts:daemonStatus",
+      "type": "function",
+      "name": "daemonStatus",
+      "filePath": "cli/src/service/linux.ts",
+      "lineRange": [183, 198],
+      "summary": "Reports Linux daemon status by checking the systemd unit active state and probing daemon health.",
+      "tags": ["service-install", "linux", "status"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/service/windows.ts",
+      "type": "file",
+      "name": "windows.ts",
+      "filePath": "cli/src/service/windows.ts",
+      "summary": "Windows service backend that builds Task Scheduler XML definitions and registers/removes them via schtasks to launch the daemon and HTTP frontend at logon, with status reporting.",
+      "tags": ["service-install", "windows", "scheduled-task", "deployment"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cli/src/service/windows.ts:taskXml",
+      "type": "function",
+      "name": "taskXml",
+      "filePath": "cli/src/service/windows.ts",
+      "lineRange": [49, 105],
+      "summary": "Builds the Task Scheduler XML document defining the logon trigger, principal, and command for a gochi service task.",
+      "tags": ["service-install", "windows", "scheduled-task", "xml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/service/windows.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "cli/src/service/windows.ts",
+      "lineRange": [153, 164],
+      "summary": "One-time Windows install: registers Task Scheduler tasks for the daemon and HTTP frontend so they start at logon.",
+      "tags": ["service-install", "windows", "scheduled-task"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/test.ts",
+      "type": "file",
+      "name": "test.ts",
+      "filePath": "cli/src/test.ts",
+      "summary": "Interactive hardware self-test driven from the CLI: walks serial, OLED, buzzer, and IMU checks through the daemon's serial protocol, asks the user yes/no questions, and prints tailored troubleshooting hints on failure.",
+      "tags": ["test", "smoke-test", "interactive", "hardware"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:cli/src/test.ts:runTest",
+      "type": "function",
+      "name": "runTest",
+      "filePath": "cli/src/test.ts",
+      "lineRange": [76, 102],
+      "summary": "Entry point for the test command: selects which component(s) to exercise and runs the corresponding hardware checks, exiting with a pass/fail summary.",
+      "tags": ["test", "smoke-test", "orchestration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/test.ts:testOled",
+      "type": "function",
+      "name": "testOled",
+      "filePath": "cli/src/test.ts",
+      "lineRange": [158, 186],
+      "summary": "Tests the OLED by scanning for the panel's I2C address and rendering text, then asking the user to confirm visibility.",
+      "tags": ["test", "hardware", "oled"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/test.ts:testBuzzer",
+      "type": "function",
+      "name": "testBuzzer",
+      "filePath": "cli/src/test.ts",
+      "lineRange": [210, 230],
+      "summary": "Tests the buzzer by forcing a face change (which jingles) and asking the user whether they heard the tone.",
+      "tags": ["test", "hardware", "buzzer"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:cli/src/test.ts:i2cAddrSeen",
+      "type": "function",
+      "name": "i2cAddrSeen",
+      "filePath": "cli/src/test.ts",
+      "lineRange": [191, 208],
+      "summary": "Runs an I2C bus scan via the daemon and checks whether a given device address is present.",
+      "tags": ["test", "hardware", "i2c"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/src/transport.ts",
+      "type": "file",
+      "name": "transport.ts",
+      "filePath": "cli/src/transport.ts",
+      "summary": "SerialTransport wraps a serialport SerialPort with a line parser, exposing open/send/close and request-response line semantics (with banner filtering) for the daemon's link to the ESP32.",
+      "tags": ["service", "serial", "transport", "device-io"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:cli/src/transport.ts:SerialTransport",
+      "type": "class",
+      "name": "SerialTransport",
+      "filePath": "cli/src/transport.ts",
+      "lineRange": [13, 84],
+      "summary": "Event-emitting wrapper over a serialport SerialPort and line parser providing open/send/close with line-oriented request-response and banner filtering for ESP32 communication.",
+      "tags": ["serial", "transport", "device-io", "event-emitter"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:cli/bin/gochi.js",
+      "type": "file",
+      "name": "gochi.js",
+      "filePath": "cli/bin/gochi.js",
+      "summary": "Executable bin shim that launches the TypeScript CLI (cli.ts) via tsx as the gochi command.",
+      "tags": ["entry-point", "bin-launcher", "cli"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    { "source": "file:cli/src/cli.ts", "target": "config:cli/package.json", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/client.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/daemon.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/image.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/server.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/service/index.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/cli.ts", "target": "file:cli/src/test.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/client.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/daemon.ts", "target": "file:cli/src/discovery.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/daemon.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/daemon.ts", "target": "file:cli/src/transport.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/server.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/service/common.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/service/darwin.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/darwin.ts", "target": "file:cli/src/server.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/darwin.ts", "target": "file:cli/src/service/common.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/service/index.ts", "target": "file:cli/src/service/darwin.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/index.ts", "target": "file:cli/src/service/linux.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/index.ts", "target": "file:cli/src/service/windows.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/service/linux.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/linux.ts", "target": "file:cli/src/server.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/linux.ts", "target": "file:cli/src/service/common.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/service/windows.ts", "target": "file:cli/src/ipc.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/windows.ts", "target": "file:cli/src/server.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:cli/src/service/windows.ts", "target": "file:cli/src/service/common.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/test.ts", "target": "file:cli/src/client.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:cli/src/client.ts", "target": "function:cli/src/client.ts:tcpCall", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/client.ts", "target": "function:cli/src/client.ts:udsCall", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/client.ts", "target": "function:cli/src/client.ts:call", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:cli/src/daemon.ts", "target": "class:cli/src/daemon.ts:Device", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/daemon.ts", "target": "function:cli/src/daemon.ts:runDaemon", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/daemon.ts", "target": "function:cli/src/daemon.ts:runDaemon", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/discovery.ts", "target": "function:cli/src/discovery.ts:watchDevices", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/discovery.ts", "target": "function:cli/src/discovery.ts:watchDevices", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:fileToFrameBytes", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:fileToFrameBytes", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:fileToFrameBase64", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:fileToFrameBase64", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:floydSteinberg", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/image.ts", "target": "function:cli/src/image.ts:packMsbFirst", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:cli/src/ipc.ts", "target": "function:cli/src/ipc.ts:clearStaleSocket", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/ipc.ts", "target": "function:cli/src/ipc.ts:clearStaleSocket", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/ipc.ts", "target": "function:cli/src/ipc.ts:daemonRequest", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/ipc.ts", "target": "function:cli/src/ipc.ts:daemonRequest", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/server.ts", "target": "function:cli/src/server.ts:runServer", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/server.ts", "target": "function:cli/src/server.ts:runServer", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/service/common.ts", "target": "function:cli/src/service/common.ts:resolveExecutionPaths", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/common.ts", "target": "function:cli/src/service/common.ts:resolveExecutionPaths", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/service/darwin.ts", "target": "function:cli/src/service/darwin.ts:setup", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/darwin.ts", "target": "function:cli/src/service/darwin.ts:setup", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/service/darwin.ts", "target": "function:cli/src/service/darwin.ts:daemonStatus", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/darwin.ts", "target": "function:cli/src/service/darwin.ts:daemonStatus", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/service/index.ts", "target": "function:cli/src/service/index.ts:backend", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:cli/src/service/linux.ts", "target": "function:cli/src/service/linux.ts:setup", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/linux.ts", "target": "function:cli/src/service/linux.ts:setup", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/service/linux.ts", "target": "function:cli/src/service/linux.ts:daemonStatus", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/linux.ts", "target": "function:cli/src/service/linux.ts:daemonStatus", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/service/windows.ts", "target": "function:cli/src/service/windows.ts:taskXml", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/windows.ts", "target": "function:cli/src/service/windows.ts:setup", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/service/windows.ts", "target": "function:cli/src/service/windows.ts:setup", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:cli/src/test.ts", "target": "function:cli/src/test.ts:runTest", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/test.ts", "target": "function:cli/src/test.ts:runTest", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:cli/src/test.ts", "target": "function:cli/src/test.ts:testOled", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/test.ts", "target": "function:cli/src/test.ts:testBuzzer", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/test.ts", "target": "function:cli/src/test.ts:i2cAddrSeen", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:cli/src/transport.ts", "target": "class:cli/src/transport.ts:SerialTransport", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:cli/src/transport.ts", "target": "class:cli/src/transport.ts:SerialTransport", "type": "exports", "direction": "forward", "weight": 0.8 }
+  ]
+}

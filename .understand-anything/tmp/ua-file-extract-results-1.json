@@ -1,0 +1,2146 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "firmware/firmware.ino",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 235,
+      "nonEmptyLines": 210,
+      "metrics": {}
+    },
+    {
+      "path": "firmware/src/command.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "nextToken",
+          "startLine": 12,
+          "endLine": 23,
+          "params": [
+            "pp",
+            "out",
+            "cap"
+          ]
+        },
+        {
+          "name": "copyArg",
+          "startLine": 26,
+          "endLine": 29,
+          "params": [
+            "dst",
+            "cap",
+            "src"
+          ]
+        },
+        {
+          "name": "parseLine",
+          "startLine": 33,
+          "endLine": 94,
+          "params": [
+            "line"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "nextToken",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "copyArg",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "parseLine",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "copyArg",
+          "callee": "strncpy",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 48
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 51
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 52
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 54
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 62
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 69
+        },
+        {
+          "caller": "parseLine",
+          "callee": "copyArg",
+          "lineNumber": 70
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 74
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 75
+        },
+        {
+          "caller": "parseLine",
+          "callee": "nextToken",
+          "lineNumber": 78
+        },
+        {
+          "caller": "parseLine",
+          "callee": "copyArg",
+          "lineNumber": 79
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 80
+        },
+        {
+          "caller": "parseLine",
+          "callee": "copyArg",
+          "lineNumber": 83
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strcasecmp",
+          "lineNumber": 84
+        },
+        {
+          "caller": "parseLine",
+          "callee": "strlen",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/command.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "Command",
+          "startLine": 34,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "type",
+            "arg1",
+            "arg2",
+            "payload",
+            "payloadLen"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Command",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "firmware/src/config.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/mood.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "moodFromName",
+          "startLine": 20,
+          "endLine": 29,
+          "params": [
+            "name",
+            "out"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "moodFromName",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "moodFromName",
+          "callee": "static_cast<uint8_t>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "moodFromName",
+          "callee": "strcasecmp",
+          "lineNumber": 23
+        },
+        {
+          "caller": "moodFromName",
+          "callee": "static_cast<Mood>",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/mood.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/renderer.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 9,
+          "endLine": 9,
+          "params": []
+        },
+        {
+          "name": "beginFrame",
+          "startLine": 11,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "drawBitmap",
+          "startLine": 13,
+          "endLine": 15,
+          "params": [
+            "x",
+            "y",
+            "bmp",
+            "w",
+            "h"
+          ]
+        },
+        {
+          "name": "drawText",
+          "startLine": 17,
+          "endLine": 17,
+          "params": [
+            "x",
+            "y",
+            "str"
+          ]
+        },
+        {
+          "name": "textWidth",
+          "startLine": 19,
+          "endLine": 19,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "clearRect",
+          "startLine": 21,
+          "endLine": 21,
+          "params": [
+            "x",
+            "y",
+            "w",
+            "h"
+          ]
+        },
+        {
+          "name": "fillRoundRect",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "x",
+            "y",
+            "w",
+            "h",
+            "r"
+          ]
+        },
+        {
+          "name": "drawPixel",
+          "startLine": 27,
+          "endLine": 27,
+          "params": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "name": "drawLine",
+          "startLine": 29,
+          "endLine": 29,
+          "params": [
+            "x0",
+            "y0",
+            "x1",
+            "y1"
+          ]
+        },
+        {
+          "name": "fillCircle",
+          "startLine": 31,
+          "endLine": 31,
+          "params": [
+            "x",
+            "y",
+            "r"
+          ]
+        },
+        {
+          "name": "fillTriangle",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "x0",
+            "y0",
+            "x1",
+            "y1",
+            "x2",
+            "y2"
+          ]
+        },
+        {
+          "name": "endFrame",
+          "startLine": 37,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "beginFrame",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "drawBitmap",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "drawText",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "textWidth",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "clearRect",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "fillRoundRect",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "drawPixel",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "drawLine",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "fillCircle",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "fillTriangle",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "endFrame",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "display::begin",
+          "lineNumber": 9
+        },
+        {
+          "caller": "beginFrame",
+          "callee": "display::clear",
+          "lineNumber": 11
+        },
+        {
+          "caller": "drawBitmap",
+          "callee": "display::drawBitmap",
+          "lineNumber": 14
+        },
+        {
+          "caller": "drawText",
+          "callee": "display::text",
+          "lineNumber": 17
+        },
+        {
+          "caller": "textWidth",
+          "callee": "display::textWidth",
+          "lineNumber": 19
+        },
+        {
+          "caller": "clearRect",
+          "callee": "display::clearRect",
+          "lineNumber": 21
+        },
+        {
+          "caller": "fillRoundRect",
+          "callee": "display::fillRoundRect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "drawPixel",
+          "callee": "display::drawPixel",
+          "lineNumber": 27
+        },
+        {
+          "caller": "drawLine",
+          "callee": "display::drawLine",
+          "lineNumber": 29
+        },
+        {
+          "caller": "fillCircle",
+          "callee": "display::fillCircle",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "display::fillTriangle",
+          "lineNumber": 34
+        },
+        {
+          "caller": "endFrame",
+          "callee": "display::show",
+          "lineNumber": 38
+        },
+        {
+          "caller": "endFrame",
+          "callee": "millis",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/renderer.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "fps",
+          "startLine": 52,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Renderer",
+          "startLine": 10,
+          "endLine": 58,
+          "methods": [
+            "init",
+            "beginFrame",
+            "drawBitmap",
+            "drawText",
+            "textWidth",
+            "clearRect",
+            "fillRoundRect",
+            "drawPixel",
+            "drawLine",
+            "fillCircle",
+            "fillTriangle",
+            "endFrame",
+            "fps"
+          ],
+          "properties": [
+            "frameCount_",
+            "fps_",
+            "fpsWindowStartMs_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "beginFrame",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "drawBitmap",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "drawText",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "textWidth",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "clearRect",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "fillRoundRect",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "drawPixel",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "drawLine",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "fillCircle",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "fillTriangle",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "endFrame",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "fps",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "Renderer",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "firmware/src/transport.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "begin",
+          "startLine": 7,
+          "endLine": 14,
+          "params": [
+            "baud"
+          ]
+        },
+        {
+          "name": "poll",
+          "startLine": 16,
+          "endLine": 40,
+          "params": [
+            "out"
+          ]
+        },
+        {
+          "name": "println",
+          "startLine": 42,
+          "endLine": 42,
+          "params": [
+            "s"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "begin",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "poll",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "println",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "begin",
+          "callee": "setRxBufferSize",
+          "lineNumber": 12
+        },
+        {
+          "caller": "begin",
+          "callee": "begin",
+          "lineNumber": 13
+        },
+        {
+          "caller": "poll",
+          "callee": "available",
+          "lineNumber": 17
+        },
+        {
+          "caller": "poll",
+          "callee": "static_cast<char>",
+          "lineNumber": 18
+        },
+        {
+          "caller": "poll",
+          "callee": "read",
+          "lineNumber": 18
+        },
+        {
+          "caller": "poll",
+          "callee": "parseLine",
+          "lineNumber": 27
+        },
+        {
+          "caller": "println",
+          "callee": "println",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/transport.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "Transport",
+          "startLine": 12,
+          "endLine": 31,
+          "methods": [
+            "begin",
+            "poll",
+            "println"
+          ],
+          "properties": [
+            "kLineCap",
+            "buf_",
+            "len_",
+            "overflow_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "begin",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "poll",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "println",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "Transport",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "firmware/src/display/display.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "begin",
+          "startLine": 34,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "clear",
+          "startLine": 40,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "show",
+          "startLine": 42,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "text",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "x",
+            "y",
+            "msg"
+          ]
+        },
+        {
+          "name": "textCentered",
+          "startLine": 49,
+          "endLine": 53,
+          "params": [
+            "y",
+            "msg"
+          ]
+        },
+        {
+          "name": "message",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "textWidth",
+          "startLine": 63,
+          "endLine": 63,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "drawBitmap",
+          "startLine": 65,
+          "endLine": 68,
+          "params": [
+            "x",
+            "y",
+            "w",
+            "h",
+            "bmp"
+          ]
+        },
+        {
+          "name": "clearRect",
+          "startLine": 70,
+          "endLine": 74,
+          "params": [
+            "x",
+            "y",
+            "w",
+            "h"
+          ]
+        },
+        {
+          "name": "fillRoundRect",
+          "startLine": 76,
+          "endLine": 76,
+          "params": [
+            "x",
+            "y",
+            "w",
+            "h",
+            "r"
+          ]
+        },
+        {
+          "name": "drawPixel",
+          "startLine": 78,
+          "endLine": 78,
+          "params": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "name": "drawLine",
+          "startLine": 80,
+          "endLine": 80,
+          "params": [
+            "x0",
+            "y0",
+            "x1",
+            "y1"
+          ]
+        },
+        {
+          "name": "fillCircle",
+          "startLine": 82,
+          "endLine": 84,
+          "params": [
+            "x",
+            "y",
+            "r"
+          ]
+        },
+        {
+          "name": "fillTriangle",
+          "startLine": 86,
+          "endLine": 92,
+          "params": [
+            "x0",
+            "y0",
+            "x1",
+            "y1",
+            "x2",
+            "y2"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "begin",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "clear",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "show",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "text",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "textCentered",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "message",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "textWidth",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "drawBitmap",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "clearRect",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "fillRoundRect",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "drawPixel",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "drawLine",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "fillCircle",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "fillTriangle",
+          "line": 86,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "begin",
+          "callee": "setBusClock",
+          "lineNumber": 35
+        },
+        {
+          "caller": "begin",
+          "callee": "begin",
+          "lineNumber": 36
+        },
+        {
+          "caller": "begin",
+          "callee": "setFont",
+          "lineNumber": 37
+        },
+        {
+          "caller": "clear",
+          "callee": "clearBuffer",
+          "lineNumber": 40
+        },
+        {
+          "caller": "show",
+          "callee": "sendBuffer",
+          "lineNumber": 42
+        },
+        {
+          "caller": "text",
+          "callee": "setFontPosTop",
+          "lineNumber": 45
+        },
+        {
+          "caller": "text",
+          "callee": "drawStr",
+          "lineNumber": 46
+        },
+        {
+          "caller": "textCentered",
+          "callee": "setFontPosTop",
+          "lineNumber": 50
+        },
+        {
+          "caller": "textCentered",
+          "callee": "getStrWidth",
+          "lineNumber": 51
+        },
+        {
+          "caller": "textCentered",
+          "callee": "drawStr",
+          "lineNumber": 52
+        },
+        {
+          "caller": "message",
+          "callee": "clearBuffer",
+          "lineNumber": 56
+        },
+        {
+          "caller": "message",
+          "callee": "setFontPosCenter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "message",
+          "callee": "getStrWidth",
+          "lineNumber": 58
+        },
+        {
+          "caller": "message",
+          "callee": "drawStr",
+          "lineNumber": 59
+        },
+        {
+          "caller": "message",
+          "callee": "sendBuffer",
+          "lineNumber": 60
+        },
+        {
+          "caller": "textWidth",
+          "callee": "getStrWidth",
+          "lineNumber": 63
+        },
+        {
+          "caller": "drawBitmap",
+          "callee": "drawBitmap",
+          "lineNumber": 67
+        },
+        {
+          "caller": "clearRect",
+          "callee": "setDrawColor",
+          "lineNumber": 71
+        },
+        {
+          "caller": "clearRect",
+          "callee": "drawBox",
+          "lineNumber": 72
+        },
+        {
+          "caller": "clearRect",
+          "callee": "setDrawColor",
+          "lineNumber": 73
+        },
+        {
+          "caller": "fillRoundRect",
+          "callee": "drawRBox",
+          "lineNumber": 76
+        },
+        {
+          "caller": "drawPixel",
+          "callee": "drawPixel",
+          "lineNumber": 78
+        },
+        {
+          "caller": "drawLine",
+          "callee": "drawLine",
+          "lineNumber": 80
+        },
+        {
+          "caller": "fillCircle",
+          "callee": "drawDisc",
+          "lineNumber": 83
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "drawTriangle",
+          "lineNumber": 89
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 90
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 90
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 91
+        },
+        {
+          "caller": "fillTriangle",
+          "callee": "static_cast<u8g2_int_t>",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/display/display.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/modes/desktop_mode.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 152,
+      "functions": [
+        {
+          "name": "DesktopMode",
+          "startLine": 27,
+          "endLine": 28,
+          "params": [
+            "tx",
+            "renderer",
+            "mood"
+          ]
+        },
+        {
+          "name": "onEnter",
+          "startLine": 30,
+          "endLine": 35,
+          "params": [
+            "vm"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 37,
+          "endLine": 46,
+          "params": [
+            "now",
+            "vm"
+          ]
+        },
+        {
+          "name": "onCommand",
+          "startLine": 48,
+          "endLine": 119,
+          "params": [
+            "cmd",
+            "vm"
+          ]
+        },
+        {
+          "name": "sendState_",
+          "startLine": 121,
+          "endLine": 126,
+          "params": [
+            "vm"
+          ]
+        },
+        {
+          "name": "sendI2cScan_",
+          "startLine": 128,
+          "endLine": 151,
+          "params": []
+        },
+        {
+          "name": "sendFaceList_",
+          "startLine": 153,
+          "endLine": 165,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DesktopMode",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "onEnter",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "onCommand",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "sendState_",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "sendI2cScan_",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "sendFaceList_",
+          "line": 153,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onEnter",
+          "callee": "setView",
+          "lineNumber": 33
+        },
+        {
+          "caller": "onEnter",
+          "callee": "face",
+          "lineNumber": 33
+        },
+        {
+          "caller": "onEnter",
+          "callee": "millis",
+          "lineNumber": 34
+        },
+        {
+          "caller": "update",
+          "callee": "isFaceActive",
+          "lineNumber": 41
+        },
+        {
+          "caller": "update",
+          "callee": "blinkOnce",
+          "lineNumber": 43
+        },
+        {
+          "caller": "update",
+          "callee": "face",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onCommand",
+          "callee": "millis",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onCommand",
+          "callee": "findExpressionByName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setExpression",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onCommand",
+          "callee": "face",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setView",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onCommand",
+          "callee": "face",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setText",
+          "lineNumber": 63
+        },
+        {
+          "caller": "onCommand",
+          "callee": "text",
+          "lineNumber": 63
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setView",
+          "lineNumber": 64
+        },
+        {
+          "caller": "onCommand",
+          "callee": "text",
+          "lineNumber": 64
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onCommand",
+          "callee": "mbedtls_base64_decode",
+          "lineNumber": 73
+        },
+        {
+          "caller": "onCommand",
+          "callee": "reinterpret_cast<const unsigned char*>",
+          "lineNumber": 74
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 77
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setBitmap",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onCommand",
+          "callee": "image",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onCommand",
+          "callee": "setView",
+          "lineNumber": 81
+        },
+        {
+          "caller": "onCommand",
+          "callee": "image",
+          "lineNumber": 81
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 82
+        },
+        {
+          "caller": "onCommand",
+          "callee": "moodFromName",
+          "lineNumber": 88
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 90
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 92
+        },
+        {
+          "caller": "onCommand",
+          "callee": "sendState_",
+          "lineNumber": 97
+        },
+        {
+          "caller": "onCommand",
+          "callee": "snprintf",
+          "lineNumber": 101
+        },
+        {
+          "caller": "onCommand",
+          "callee": "fps",
+          "lineNumber": 101
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onCommand",
+          "callee": "sendFaceList_",
+          "lineNumber": 106
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 109
+        },
+        {
+          "caller": "onCommand",
+          "callee": "sendI2cScan_",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onCommand",
+          "callee": "println",
+          "lineNumber": 116
+        },
+        {
+          "caller": "sendState_",
+          "callee": "snprintf",
+          "lineNumber": 123
+        },
+        {
+          "caller": "sendState_",
+          "callee": "activeViewName",
+          "lineNumber": 123
+        },
+        {
+          "caller": "sendState_",
+          "callee": "expressionName",
+          "lineNumber": 124
+        },
+        {
+          "caller": "sendState_",
+          "callee": "expression",
+          "lineNumber": 124
+        },
+        {
+          "caller": "sendState_",
+          "callee": "face",
+          "lineNumber": 124
+        },
+        {
+          "caller": "sendState_",
+          "callee": "println",
+          "lineNumber": 125
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "snprintf",
+          "lineNumber": 134
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "beginTransmission",
+          "lineNumber": 137
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "endTransmission",
+          "lineNumber": 138
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "snprintf",
+          "lineNumber": 139
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "snprintf",
+          "lineNumber": 142
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "imu::probe",
+          "lineNumber": 145
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "snprintf",
+          "lineNumber": 146
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "snprintf",
+          "lineNumber": 149
+        },
+        {
+          "caller": "sendI2cScan_",
+          "callee": "println",
+          "lineNumber": 150
+        },
+        {
+          "caller": "sendFaceList_",
+          "callee": "expressionCount",
+          "lineNumber": 156
+        },
+        {
+          "caller": "sendFaceList_",
+          "callee": "getExpression",
+          "lineNumber": 157
+        },
+        {
+          "caller": "sendFaceList_",
+          "callee": "static_cast<ExpressionId>",
+          "lineNumber": 157
+        },
+        {
+          "caller": "sendFaceList_",
+          "callee": "println",
+          "lineNumber": 164
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "firmware/src/modes/desktop_mode.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "Transport",
+          "startLine": 9,
+          "endLine": 9,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "Renderer",
+          "startLine": 10,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "DesktopMode",
+          "startLine": 16,
+          "endLine": 36,
+          "methods": [
+            "onEnter",
+            "update",
+            "onCommand",
+            "sendState_",
+            "sendFaceList_",
+            "sendI2cScan_"
+          ],
+          "properties": [
+            "tx_",
+            "renderer_",
+            "mood_",
+            "lastCmdMs_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Transport",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Renderer",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "onEnter",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "onCommand",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "DesktopMode",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "firmware/src/modes/free_mode.cpp",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "poolFor",
+          "startLine": 32,
+          "endLine": 47,
+          "params": [
+            "m"
+          ]
+        },
+        {
+          "name": "randRange",
+          "startLine": 59,
+          "endLine": 61,
+          "params": [
+            "lo",
+            "hi"
+          ]
+        },
+        {
+          "name": "FreeMode",
+          "startLine": 65,
+          "endLine": 65,
+          "params": [
+            "mood"
+          ]
+        },
+        {
+          "name": "scheduleExpr_",
+          "startLine": 67,
+          "endLine": 69,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "scheduleMood_",
+          "startLine": 71,
+          "endLine": 73,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "pickExpression_",
+          "startLine": 75,
+          "endLine": 88,
+          "params": [
+            "now",
+            "vm",
+            "sound"
+          ]
+        },
+        {
+          "name": "onEnter",
+          "startLine": 90,
+          "endLine": 95,
+          "params": [
+            "vm"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 97,
+          "endLine": 112,
+          "params": [
+            "now",
+            "vm"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Pool",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "ids",
+            "count"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Pool",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "poolFor",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "randRange",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "FreeMode",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "scheduleExpr_",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "scheduleMood_",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "pickExpression_",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "onEnter",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "randRange",
+          "callee": "static_cast<int>",
+          "lineNumber": 60
+        },
+        {
+          "caller": "randRange",
+          "callee": "esp_random",
+          "lineNumber": 60
+        },
+        {
+          "caller": "randRange",
+          "callee": "static_cast<uint32_t>",
+          "lineNumber": 60
+        },
+        {
+          "caller": "scheduleExpr_",
+          "callee": "static_cast<uint32_t>",
+          "lineNumber": 68
+        },
+        {
+          "caller": "scheduleExpr_",
+          "callee": "randRange",
+          "lineNumber": 68
+        },
+        {
+          "caller": "scheduleMood_",
+          "callee": "static_cast<uint32_t>",
+          "lineNumber": 72
+        },
+        {
+          "caller": "scheduleMood_",
+          "callee": "randRange",
+          "lineNumber": 72
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "poolFor",
+          "lineNumber": 76
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "expression",
+          "lineNumber": 77
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "face",
+          "lineNumber": 77
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "randRange",
+          "lineNumber": 80
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "setExpression",
+          "lineNumber": 82
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "face",
+          "lineNumber": 82
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "jingleFor",
+          "lineNumber": 84
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "buzzer::play",
+          "lineNumber": 85
+        },
+        {
+          "caller": "pickExpression_",
+          "callee": "scheduleExpr_",
+          "lineNumber": 87
+        },
+        {
+          "caller": "onEnter",
+          "callee": "setView",
+          "lineNumber": 91
+        },
+        {
+          "caller": "onEnter",
+          "callee": "face",
+          "lineNumber": 91
+        },
+        {
+          "caller": "onEnter",
+          "callee": "millis",
+          "lineNumber": 92
+        },
+        {
+          "caller": "onEnter",
+          "callee": "pickExpression_",
+          "lineNumber": 93
+        },
+        {
+          "caller": "onEnter",
+          "callee": "scheduleMood_",
+          "lineNumber": 94
+        },
+        {
+          "caller": "update",
+          "callee": "static_cast<int32_t>",
+          "lineNumber": 98
+        },
+        {
+          "caller": "update",
+          "callee": "randRange",
+          "lineNumber": 104
+        },
+        {
+          "caller": "update",
+          "callee": "scheduleMood_",
+          "lineNumber": 107
+        },
+        {
+          "caller": "update",
+          "callee": "pickExpression_",
+          "lineNumber": 108
+        },
+        {
+          "caller": "update",
+          "callee": "static_cast<int32_t>",
+          "lineNumber": 109
+        },
+        {
+          "caller": "update",
+          "callee": "pickExpression_",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "firmware/src/modes/free_mode.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "FreeMode",
+          "startLine": 14,
+          "endLine": 32,
+          "methods": [
+            "onEnter",
+            "update",
+            "pickExpression_",
+            "scheduleExpr_",
+            "scheduleMood_"
+          ],
+          "properties": [
+            "mood_",
+            "nextExprMs_",
+            "nextMoodMs_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onEnter",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "FreeMode",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "firmware/src/modes/mode.h",
+      "language": "cpp",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "onEnter",
+          "startLine": 16,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "onCommand",
+          "startLine": 18,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "onExit",
+          "startLine": 19,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "~Mode",
+          "startLine": 20,
+          "endLine": 20,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ViewManager",
+          "startLine": 11,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "Command",
+          "startLine": 12,
+          "endLine": 12,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "Mode",
+          "startLine": 14,
+          "endLine": 21,
+          "methods": [
+            "onEnter",
+            "update",
+            "onCommand",
+            "onExit",
+            "~Mode"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ViewManager",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "Command",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "onEnter",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "update",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "onCommand",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "onExit",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "~Mode",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "Mode",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 4,
+        "classCount": 3
+      }
+    }
+  ]
+}

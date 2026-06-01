@@ -1,0 +1,356 @@
+{
+  "batch": 4,
+  "generatedBy": "file-analyzer (manual fallback: extract-structure.mjs and agent definition were absent on this system)",
+  "nodes": [
+    {
+      "id": "file:firmware/tests/buzzer/buzzer.ino",
+      "type": "file",
+      "category": "code",
+      "name": "buzzer.ino",
+      "path": "firmware/tests/buzzer/buzzer.ino",
+      "language": "cpp",
+      "summary": "Bring-up test sketch for the passive buzzer. Includes config.h, defaults BUZZER_PIN to 3 if undefined, and plays an ascending C-major melody (262-523 Hz) in a loop using tone()/noTone() to verify the buzzer pin and PWM tone output. Logs 'Buzzer test start' at 115200 baud.",
+      "symbols": [
+        { "name": "setup", "kind": "function", "signature": "void setup()" },
+        { "name": "loop", "kind": "function", "signature": "void loop()" },
+        { "name": "melody", "kind": "variable", "signature": "int melody[8]" },
+        { "name": "noteCount", "kind": "variable", "signature": "int noteCount" }
+      ],
+      "tags": ["test", "firmware", "arduino", "esp32c3", "buzzer", "peripheral-bringup"]
+    },
+    {
+      "id": "file:firmware/tests/led/led.ino",
+      "type": "file",
+      "category": "code",
+      "name": "led.ino",
+      "path": "firmware/tests/led/led.ino",
+      "language": "cpp",
+      "summary": "Bring-up test sketch that blinks the on-board/external LED to verify GPIO output and timing. Defaults LED_PIN to 8 if undefined (does not include config.h), toggles HIGH/LOW with 500 ms delays. Logs 'LED test start' at 115200 baud.",
+      "symbols": [
+        { "name": "setup", "kind": "function", "signature": "void setup()" },
+        { "name": "loop", "kind": "function", "signature": "void loop()" }
+      ],
+      "tags": ["test", "firmware", "arduino", "esp32c3", "led", "gpio", "peripheral-bringup"]
+    },
+    {
+      "id": "file:firmware/tests/mpu/mpu.ino",
+      "type": "file",
+      "category": "code",
+      "name": "mpu.ino",
+      "path": "firmware/tests/mpu/mpu.ino",
+      "language": "cpp",
+      "summary": "Bring-up test sketch for the MPU6050 accel/gyro over I2C using Adafruit_MPU6050. Includes config.h, defaults SDA_PIN=6/SCL_PIN=7, initializes I2C and the sensor (halts on failure), configures 8G accel range, 500 deg/s gyro range, 21 Hz bandwidth, then streams 'AccelX:..,AccelY:..,AccelZ:.., GyroX:..,GyroY:..,GyroZ:..' lines over serial every 100 ms. This serial format is consumed by visualize.html.",
+      "symbols": [
+        { "name": "setup", "kind": "function", "signature": "void setup()" },
+        { "name": "loop", "kind": "function", "signature": "void loop()" },
+        { "name": "mpu", "kind": "variable", "signature": "Adafruit_MPU6050 mpu" }
+      ],
+      "tags": ["test", "firmware", "arduino", "esp32c3", "mpu6050", "i2c", "sensor", "peripheral-bringup"]
+    },
+    {
+      "id": "file:firmware/tests/oled/oled.ino",
+      "type": "file",
+      "category": "code",
+      "name": "oled.ino",
+      "path": "firmware/tests/oled/oled.ino",
+      "language": "cpp",
+      "summary": "Bring-up test sketch for the 128x64 SSD1306 OLED over I2C using Adafruit_SSD1306 / Adafruit_GFX. Includes config.h, defaults SDA_PIN=6/SCL_PIN=7, initializes the display at address 0x3C (halts on allocation failure), and draws 'OLED test OK'. Empty loop.",
+      "symbols": [
+        { "name": "setup", "kind": "function", "signature": "void setup()" },
+        { "name": "loop", "kind": "function", "signature": "void loop()" },
+        { "name": "display", "kind": "variable", "signature": "Adafruit_SSD1306 display(128, 64, &Wire, -1)" }
+      ],
+      "tags": ["test", "firmware", "arduino", "esp32c3", "oled", "ssd1306", "i2c", "display", "peripheral-bringup"]
+    },
+    {
+      "id": "file:firmware/tests/wifi/wifi.ino",
+      "type": "file",
+      "category": "code",
+      "name": "wifi.ino",
+      "path": "firmware/tests/wifi/wifi.ino",
+      "language": "cpp",
+      "summary": "Bring-up test sketch that verifies WiFi on the ESP32-C3. Includes <WiFi.h>, sets station mode, disconnects, then repeatedly scans for networks and prints the count over serial every 5 s. No external config include.",
+      "symbols": [
+        { "name": "setup", "kind": "function", "signature": "void setup()" },
+        { "name": "loop", "kind": "function", "signature": "void loop()" }
+      ],
+      "tags": ["test", "firmware", "arduino", "esp32c3", "wifi", "peripheral-bringup"]
+    },
+    {
+      "id": "file:firmware/tests/mpu/visualize.html",
+      "type": "file",
+      "category": "markup",
+      "name": "visualize.html",
+      "path": "firmware/tests/mpu/visualize.html",
+      "language": "html",
+      "summary": "Standalone single-page 'MPU6050 Live Visualizer'. Uses the Web Serial API (navigator.serial.requestPort) to connect to the board, reads the serial stream with a TextDecoder, parses the 'AccelX:..,AccelY:..' lines emitted by mpu.ino, and plots accel/gyro values live on two <canvas> charts. A Connect button drives the session.",
+      "tags": ["test", "tooling", "web-serial", "visualization", "mpu6050", "browser"]
+    },
+    {
+      "id": "doc:README.md",
+      "type": "document",
+      "category": "docs",
+      "name": "README.md",
+      "path": "README.md",
+      "language": "markdown",
+      "summary": "Top-level project README. Describes the Tamagotchi: a virtual pet on an ESP32-C3 with Arduino/C++ firmware, a TypeScript serial CLI, and a hardware build guide. Lists repo layout (firmware/, cli/, skills/, HOW-TO docs), a quick start (make flash/monitor, bun install/start), the hardware BOM, and points to HOW-TO-BUILD.md and HOW-TO-SETUP.md. MIT licensed.",
+      "tags": ["overview", "readme", "documentation"]
+    },
+    {
+      "id": "doc:HOW-TO-BUILD.md",
+      "type": "document",
+      "category": "docs",
+      "name": "HOW-TO-BUILD.md",
+      "path": "HOW-TO-BUILD.md",
+      "language": "markdown",
+      "summary": "Hardware assembly and wiring guide. Covers the bill of materials, I2C wiring for the OLED and MPU6050, buzzer and button wiring, step-by-step breadboard assembly (layout, power rails, I2C bus, buzzer/buttons), testing the build, enclosure notes, and troubleshooting (no power, black OLED, MPU not detected).",
+      "tags": ["hardware", "wiring", "assembly", "guide", "documentation"]
+    },
+    {
+      "id": "doc:HOW-TO-SETUP.md",
+      "type": "document",
+      "category": "docs",
+      "name": "HOW-TO-SETUP.md",
+      "path": "HOW-TO-SETUP.md",
+      "language": "markdown",
+      "summary": "Toolchain and flashing setup guide. Covers prerequisites per OS (macOS/Linux/Windows), installing arduino-cli and the ESP32 core, installing libraries, flashing, the serial monitor, troubleshooting (port not found, Linux permission denied, port busy, bootloader/upload failures), and CLI setup with bun install.",
+      "tags": ["setup", "toolchain", "flashing", "guide", "documentation"]
+    },
+    {
+      "id": "doc:firmware/README.md",
+      "type": "document",
+      "category": "docs",
+      "name": "firmware/README.md",
+      "path": "firmware/README.md",
+      "language": "markdown",
+      "summary": "Firmware README for the ESP32-C3 Arduino C++ code. Documents the layout (firmware.ino main sketch, src/config.h pin definitions, tests/), build & flash via make (build-fw/flash/monitor), the default pin map (LED 8, Buzzer 3, OLED/MPU SDA 6, SCL 7) from src/config.h, and the per-peripheral bring-up tests.",
+      "tags": ["firmware", "readme", "documentation", "pin-config"]
+    },
+    {
+      "id": "doc:firmware/tests/README.md",
+      "type": "document",
+      "category": "docs",
+      "name": "firmware/tests/README.md",
+      "path": "firmware/tests/README.md",
+      "language": "markdown",
+      "summary": "Bring-up tests README. Describes the per-peripheral test sketches (led, buzzer, oled, mpu, wifi) used to verify each component before running full firmware, how to compile/upload an individual test with arduino-cli, and the mpu visualize.html for live browser plotting over Web Serial.",
+      "tags": ["tests", "readme", "documentation", "bringup"]
+    },
+    {
+      "id": "doc:cli/README.md",
+      "type": "document",
+      "category": "docs",
+      "name": "cli/README.md",
+      "path": "cli/README.md",
+      "language": "markdown",
+      "summary": "CLI README. Documents the TypeScript CLI that talks to the device over serial: install/usage via bun, that it uses commander for arg parsing, serialport for device I/O, and chalk-colored log streaming, plus build to dist/ and npm publishing as tamagotchi-cli on cli-v* tags.",
+      "tags": ["cli", "readme", "documentation", "typescript"]
+    },
+    {
+      "id": "doc:skills/README.md",
+      "type": "document",
+      "category": "docs",
+      "name": "skills/README.md",
+      "path": "skills/README.md",
+      "language": "markdown",
+      "summary": "Skills directory README. Lists the agent skills for the project (the tamagotchi/ project-specific skill) and notes each skill has a SKILL.md describing when and how to use it.",
+      "tags": ["skills", "readme", "documentation"]
+    },
+    {
+      "id": "doc:skills/tamagotchi/SKILL.md",
+      "type": "document",
+      "category": "docs",
+      "name": "skills/tamagotchi/SKILL.md",
+      "path": "skills/tamagotchi/SKILL.md",
+      "language": "markdown",
+      "summary": "Project-specific agent skill (frontmatter name: tamagotchi). Describes using the skill for the Tamagotchi ESP32 device firmware/CLI: capabilities are flashing firmware to the ESP32-C3, talking over serial, and running bring-up tests; references firmware/ for device code and cli/ for host tooling.",
+      "tags": ["skill", "agent", "documentation"]
+    },
+    {
+      "id": "file:Makefile",
+      "type": "file",
+      "category": "script",
+      "name": "Makefile",
+      "path": "Makefile",
+      "language": "makefile",
+      "summary": "Project build-system entrypoint. Defines config (PORT, FQBN esp32:esp32:esp32c3, CLI_DIR, FW_DIR, SKETCH=firmware/firmware.ino) and targets: flash (arduino-cli compile + upload), erase (esptool erase_flash), monitor (serial at 115200), build-fw (compile only), cli (bun run start), build-cli (bun run build), and help.",
+      "tags": ["build", "makefile", "arduino-cli", "esptool", "bun", "automation"]
+    },
+    {
+      "id": "pipeline:.github/workflows/release-cli.yml",
+      "type": "pipeline",
+      "category": "infra",
+      "name": "release-cli.yml",
+      "path": ".github/workflows/release-cli.yml",
+      "language": "yaml",
+      "summary": "GitHub Actions workflow 'Release CLI'. Triggered on pushed tags matching cli-v*. On ubuntu-latest: checks out, sets up Bun, runs bun install and bun run build in cli/, then npm publish using the NPM_TOKEN secret. Builds and publishes the TypeScript CLI to npm.",
+      "tags": ["ci", "cd", "github-actions", "release", "npm", "cli"]
+    },
+    {
+      "id": "config:firmware/sketch.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "firmware/sketch.yaml",
+      "path": "firmware/sketch.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli sketch profile for the main firmware. Sets default FQBN esp32:esp32:esp32c3 and default port, and an esp32c3 profile pinning the esp32:esp32 (3.3.7) platform plus libraries Adafruit MPU6050, Adafruit SSD1306, Adafruit GFX Library.",
+      "tags": ["config", "arduino-cli", "sketch-profile", "esp32c3"]
+    },
+    {
+      "id": "config:firmware/arduino-cli.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "firmware/arduino-cli.yaml",
+      "path": "firmware/arduino-cli.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli configuration adding the Espressif ESP32 board-manager additional URL (package_esp32_index.json) so the ESP32 core can be installed.",
+      "tags": ["config", "arduino-cli", "board-manager", "esp32"]
+    },
+    {
+      "id": "config:firmware/.clangd",
+      "type": "config",
+      "category": "config",
+      "name": "firmware/.clangd",
+      "path": "firmware/.clangd",
+      "language": "yaml",
+      "summary": "clangd language-server config for the firmware. Adds compile flags (-ferror-limit=0, the ESP32 core include path, -std=gnu++17) and removes machine/feature flags (-m*, -f*) so editor IntelliSense resolves Arduino/ESP32 headers.",
+      "tags": ["config", "clangd", "lsp", "editor", "cpp"]
+    },
+    {
+      "id": "config:firmware/tests/buzzer/sketch.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "buzzer/sketch.yaml",
+      "path": "firmware/tests/buzzer/sketch.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli sketch profile for the buzzer bring-up test. Default FQBN/port plus an esp32c3 profile pinning esp32:esp32 (3.3.7).",
+      "tags": ["config", "arduino-cli", "sketch-profile", "test", "esp32c3"]
+    },
+    {
+      "id": "config:firmware/tests/led/sketch.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "led/sketch.yaml",
+      "path": "firmware/tests/led/sketch.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli sketch profile for the LED bring-up test. Default FQBN/port plus an esp32c3 profile pinning esp32:esp32 (3.3.7).",
+      "tags": ["config", "arduino-cli", "sketch-profile", "test", "esp32c3"]
+    },
+    {
+      "id": "config:firmware/tests/mpu/sketch.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "mpu/sketch.yaml",
+      "path": "firmware/tests/mpu/sketch.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli sketch profile for the MPU6050 bring-up test. Default FQBN/port plus an esp32c3 profile pinning esp32:esp32 (3.3.7).",
+      "tags": ["config", "arduino-cli", "sketch-profile", "test", "esp32c3"]
+    },
+    {
+      "id": "config:firmware/tests/oled/sketch.yaml",
+      "type": "config",
+      "category": "config",
+      "name": "oled/sketch.yaml",
+      "path": "firmware/tests/oled/sketch.yaml",
+      "language": "yaml",
+      "summary": "arduino-cli sketch profile for the OLED bring-up test. Default FQBN/port plus an esp32c3 profile pinning esp32:esp32 (3.3.7) and libraries Adafruit SSD1306 and Adafruit GFX Library.",
+      "tags": ["config", "arduino-cli", "sketch-profile", "test", "esp32c3"]
+    },
+    {
+      "id": "config:.clang-format",
+      "type": "config",
+      "category": "config",
+      "name": ".clang-format",
+      "path": ".clang-format",
+      "language": "yaml",
+      "summary": "clang-format style config for C/C++ firmware sources: Google base style, IndentWidth 2, ColumnLimit 100.",
+      "tags": ["config", "clang-format", "formatting", "cpp"]
+    },
+    {
+      "id": "config:.clang-tidy",
+      "type": "config",
+      "category": "config",
+      "name": ".clang-tidy",
+      "path": ".clang-tidy",
+      "language": "yaml",
+      "summary": "clang-tidy lint config for C/C++ firmware sources. Enables readability-*, bugprone-*, performance-* checks (disabling magic-numbers and braces-around-statements), no warnings-as-errors, header filter for all headers, and FormatStyle: file.",
+      "tags": ["config", "clang-tidy", "linting", "cpp"]
+    },
+    {
+      "id": "config:.gitignore",
+      "type": "config",
+      "category": "config",
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "language": "gitignore",
+      "summary": "Git ignore rules: node_modules/, dist/ build output, .env secrets, the Arduino /build/ artifacts directory, and .DS_Store.",
+      "tags": ["config", "git", "vcs"]
+    },
+    {
+      "id": "config:.zed/settings.json",
+      "type": "config",
+      "category": "config",
+      "name": ".zed/settings.json",
+      "path": ".zed/settings.json",
+      "language": "json",
+      "summary": "Zed editor settings. Points clangd to the Homebrew LLVM binary with --query-driver=**, enables language-server formatting and format-on-save for C/C++, treats .ino files as C++, and sets tab_size 2.",
+      "tags": ["config", "editor", "zed", "clangd", "cpp"]
+    },
+    {
+      "id": "config:cli/tsconfig.json",
+      "type": "config",
+      "category": "config",
+      "name": "cli/tsconfig.json",
+      "path": "cli/tsconfig.json",
+      "language": "json",
+      "summary": "TypeScript compiler config for the CLI. Targets ESNext modules with bundler resolution, strict mode, esModuleInterop, skipLibCheck, declaration output, rootDir src, outDir dist; includes src/**/* and excludes node_modules/dist.",
+      "tags": ["config", "typescript", "tsconfig", "cli"]
+    },
+    {
+      "id": "config:cli/package.json",
+      "type": "config",
+      "category": "config",
+      "name": "cli/package.json",
+      "path": "cli/package.json",
+      "language": "json",
+      "summary": "npm manifest for tamagotchi-cli v0.1.0 (ESM). Exposes a 'tamagotchi' bin pointing at dist/cli.js; scripts start (bun run src/cli.ts), build (bun build + tsc declarations) and a watch script; depends on @serialport/parser-readline, serialport, commander, chalk; devDeps @types/node and typescript.",
+      "tags": ["config", "npm", "package-json", "cli"]
+    }
+  ],
+  "edges": [
+    { "from": "file:firmware/tests/buzzer/buzzer.ino", "to": "file:firmware/src/config.h", "type": "imports" },
+    { "from": "file:firmware/tests/mpu/mpu.ino", "to": "file:firmware/src/config.h", "type": "imports" },
+    { "from": "file:firmware/tests/oled/oled.ino", "to": "file:firmware/src/config.h", "type": "imports" },
+
+    { "from": "doc:README.md", "to": "file:firmware/firmware.ino", "type": "documents" },
+    { "from": "doc:README.md", "to": "file:cli/src/cli.ts", "type": "documents" },
+    { "from": "doc:firmware/README.md", "to": "file:firmware/firmware.ino", "type": "documents" },
+    { "from": "doc:cli/README.md", "to": "file:cli/src/cli.ts", "type": "documents" },
+
+    { "from": "doc:firmware/tests/README.md", "to": "file:firmware/tests/led/led.ino", "type": "documents" },
+    { "from": "doc:firmware/tests/README.md", "to": "file:firmware/tests/buzzer/buzzer.ino", "type": "documents" },
+    { "from": "doc:firmware/tests/README.md", "to": "file:firmware/tests/oled/oled.ino", "type": "documents" },
+    { "from": "doc:firmware/tests/README.md", "to": "file:firmware/tests/mpu/mpu.ino", "type": "documents" },
+    { "from": "doc:firmware/tests/README.md", "to": "file:firmware/tests/wifi/wifi.ino", "type": "documents" },
+
+    { "from": "file:Makefile", "to": "file:firmware/firmware.ino", "type": "configures" },
+    { "from": "file:Makefile", "to": "file:cli/src/cli.ts", "type": "configures" },
+
+    { "from": "pipeline:.github/workflows/release-cli.yml", "to": "file:cli/src/cli.ts", "type": "triggers" },
+
+    { "from": "config:.clang-format", "to": "file:firmware/firmware.ino", "type": "configures" },
+    { "from": "config:.clang-tidy", "to": "file:firmware/firmware.ino", "type": "configures" },
+
+    { "from": "config:firmware/tests/buzzer/sketch.yaml", "to": "file:firmware/tests/buzzer/buzzer.ino", "type": "configures" },
+    { "from": "config:firmware/tests/led/sketch.yaml", "to": "file:firmware/tests/led/led.ino", "type": "configures" },
+    { "from": "config:firmware/tests/mpu/sketch.yaml", "to": "file:firmware/tests/mpu/mpu.ino", "type": "configures" },
+    { "from": "config:firmware/tests/oled/sketch.yaml", "to": "file:firmware/tests/oled/oled.ino", "type": "configures" },
+
+    { "from": "config:firmware/sketch.yaml", "to": "file:firmware/firmware.ino", "type": "configures" },
+    { "from": "config:firmware/arduino-cli.yaml", "to": "file:firmware/firmware.ino", "type": "configures" },
+
+    { "from": "config:cli/tsconfig.json", "to": "file:cli/src/cli.ts", "type": "configures" },
+
+    { "from": "file:firmware/tests/mpu/visualize.html", "to": "file:firmware/tests/mpu/mpu.ino", "type": "related" }
+  ]
+}

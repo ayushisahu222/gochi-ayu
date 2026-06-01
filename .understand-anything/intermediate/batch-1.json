@@ -1,0 +1,411 @@
+{
+  "nodes": [
+    {
+      "id": "file:firmware/firmware.ino",
+      "type": "file",
+      "name": "firmware.ino",
+      "filePath": "firmware/firmware.ino",
+      "summary": "Arduino sketch entry point that initializes all subsystems in setup() and runs the main event loop in loop(), dispatching between desktop and free operating modes.",
+      "tags": ["entry-point", "arduino", "esp32", "event-handler"],
+      "complexity": "moderate",
+      "languageNotes": "Arduino .ino sketch using the setup()/loop() lifecycle for ESP32-C3."
+    },
+    {
+      "id": "function:firmware/firmware.ino:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "firmware/firmware.ino",
+      "lineRange": [56, 93],
+      "summary": "One-time initialization routine that brings up serial, display, IMU, buzzer, transport and the operating modes.",
+      "tags": ["entry-point", "initialization", "arduino"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:firmware/firmware.ino:loop",
+      "type": "function",
+      "name": "loop",
+      "filePath": "firmware/firmware.ino",
+      "lineRange": [99, 233],
+      "summary": "Main run loop that polls inputs, updates mood/motion and drives the active mode each tick, switching between desktop and free modes.",
+      "tags": ["entry-point", "event-handler", "main-loop"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:firmware/src/command.cpp",
+      "type": "file",
+      "name": "command.cpp",
+      "filePath": "firmware/src/command.cpp",
+      "summary": "Implements command decoding from raw bytes and execution against a device context, mapping protocol opcodes to actions.",
+      "tags": ["protocol", "serialization", "controller"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:firmware/src/command.cpp:fromByte",
+      "type": "function",
+      "name": "fromByte",
+      "filePath": "firmware/src/command.cpp",
+      "lineRange": [7, 22],
+      "summary": "Decodes a raw byte into a Command enum value used by the transport protocol.",
+      "tags": ["protocol", "serialization", "parsing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:firmware/src/command.cpp:execute",
+      "type": "function",
+      "name": "execute",
+      "filePath": "firmware/src/command.cpp",
+      "lineRange": [27, 93],
+      "summary": "Dispatches a decoded Command against the device context, performing the corresponding hardware or state action.",
+      "tags": ["protocol", "controller", "event-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:firmware/src/command.h",
+      "type": "file",
+      "name": "command.h",
+      "filePath": "firmware/src/command.h",
+      "summary": "Declares the Command enum and the command decode/execute interface for the host-device protocol.",
+      "tags": ["protocol", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/config.h",
+      "type": "file",
+      "name": "config.h",
+      "filePath": "firmware/src/config.h",
+      "summary": "Central configuration header defining hardware pin assignments and timing constants for the device.",
+      "tags": ["config", "constants", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/mood.cpp",
+      "type": "file",
+      "name": "mood.cpp",
+      "filePath": "firmware/src/mood.cpp",
+      "summary": "Implements time-driven mood state updates that govern the pet's emotional behavior.",
+      "tags": ["state", "data-model", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:firmware/src/mood.cpp:update",
+      "type": "function",
+      "name": "update",
+      "filePath": "firmware/src/mood.cpp",
+      "lineRange": [5, 28],
+      "summary": "Advances the mood state based on elapsed time, decaying or shifting the pet's emotional level.",
+      "tags": ["state", "update", "logic"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/mood.h",
+      "type": "file",
+      "name": "mood.h",
+      "filePath": "firmware/src/mood.h",
+      "summary": "Declares the Mood data model and its state-update interface.",
+      "tags": ["data-model", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/renderer.cpp",
+      "type": "file",
+      "name": "renderer.cpp",
+      "filePath": "firmware/src/renderer.cpp",
+      "summary": "Implements the Renderer that initializes drawing and renders expression frames to the display with positional offsets.",
+      "tags": ["graphics", "rendering", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:firmware/src/renderer.cpp:drawExpression",
+      "type": "function",
+      "name": "drawExpression",
+      "filePath": "firmware/src/renderer.cpp",
+      "lineRange": [13, 48],
+      "summary": "Draws an expression frame to the display at the given x/y offset, blitting bitmap pixel data.",
+      "tags": ["graphics", "rendering", "display"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:firmware/src/renderer.h",
+      "type": "file",
+      "name": "renderer.h",
+      "filePath": "firmware/src/renderer.h",
+      "summary": "Declares the Renderer class interface for drawing expressions and content to the display.",
+      "tags": ["graphics", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/renderer.h:Renderer",
+      "type": "class",
+      "name": "Renderer",
+      "filePath": "firmware/src/renderer.h",
+      "lineRange": [14, 56],
+      "summary": "Renderer class that wraps the display driver to draw expression frames and graphics.",
+      "tags": ["graphics", "rendering", "class"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/transport.cpp",
+      "type": "file",
+      "name": "transport.cpp",
+      "filePath": "firmware/src/transport.cpp",
+      "summary": "Implements the Transport that polls the serial link and decodes incoming command bytes for the host protocol.",
+      "tags": ["transport", "serial", "io"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:firmware/src/transport.cpp:poll",
+      "type": "function",
+      "name": "poll",
+      "filePath": "firmware/src/transport.cpp",
+      "lineRange": [12, 41],
+      "summary": "Polls the serial input for available bytes and decodes a Command into the output parameter when present.",
+      "tags": ["transport", "serial", "io"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:firmware/src/transport.h",
+      "type": "file",
+      "name": "transport.h",
+      "filePath": "firmware/src/transport.h",
+      "summary": "Declares the Transport class interface for command-based host communication over serial.",
+      "tags": ["transport", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/transport.h:Transport",
+      "type": "class",
+      "name": "Transport",
+      "filePath": "firmware/src/transport.h",
+      "lineRange": [9, 29],
+      "summary": "Transport class encapsulating serial communication and command framing with the host.",
+      "tags": ["transport", "serial", "class"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/display/display.cpp",
+      "type": "file",
+      "name": "display.cpp",
+      "filePath": "firmware/src/display/display.cpp",
+      "summary": "Implements the low-level display driver, initializing the screen hardware and providing clear/pixel output primitives.",
+      "tags": ["display", "driver", "hardware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:firmware/src/display/display.cpp:begin",
+      "type": "function",
+      "name": "begin",
+      "filePath": "firmware/src/display/display.cpp",
+      "lineRange": [9, 33],
+      "summary": "Initializes the display hardware over its bus and configures the screen for drawing.",
+      "tags": ["display", "initialization", "hardware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:firmware/src/display/display.h",
+      "type": "file",
+      "name": "display.h",
+      "filePath": "firmware/src/display/display.h",
+      "summary": "Declares the Display driver class interface for the screen hardware.",
+      "tags": ["display", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/display/display.h:Display",
+      "type": "class",
+      "name": "Display",
+      "filePath": "firmware/src/display/display.h",
+      "lineRange": [12, 58],
+      "summary": "Display class abstracting the screen hardware driver with init, clear and pixel output methods.",
+      "tags": ["display", "driver", "class"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/modes/desktop_mode.cpp",
+      "type": "file",
+      "name": "desktop_mode.cpp",
+      "filePath": "firmware/src/modes/desktop_mode.cpp",
+      "summary": "Implements DesktopMode behavior, driving the pet from host commands, IMU input, rendering and transport while connected to a desktop.",
+      "tags": ["mode", "controller", "desktop"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:firmware/src/modes/desktop_mode.cpp:update",
+      "type": "function",
+      "name": "update",
+      "filePath": "firmware/src/modes/desktop_mode.cpp",
+      "lineRange": [28, 163],
+      "summary": "Per-tick DesktopMode update that processes host commands and IMU motion to drive expressions and transport responses.",
+      "tags": ["mode", "event-handler", "main-loop"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:firmware/src/modes/desktop_mode.cpp:enter",
+      "type": "function",
+      "name": "enter",
+      "filePath": "firmware/src/modes/desktop_mode.cpp",
+      "lineRange": [17, 23],
+      "summary": "Initializes DesktopMode state when the mode becomes active.",
+      "tags": ["mode", "lifecycle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/modes/desktop_mode.h",
+      "type": "file",
+      "name": "desktop_mode.h",
+      "filePath": "firmware/src/modes/desktop_mode.h",
+      "summary": "Declares DesktopMode, a Mode subclass for host-connected operation driven by serial commands.",
+      "tags": ["mode", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/modes/desktop_mode.h:DesktopMode",
+      "type": "class",
+      "name": "DesktopMode",
+      "filePath": "firmware/src/modes/desktop_mode.h",
+      "lineRange": [12, 34],
+      "summary": "DesktopMode class extending Mode to implement host-tethered behavior using transport, renderer and IMU.",
+      "tags": ["mode", "controller", "class"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/modes/free_mode.cpp",
+      "type": "file",
+      "name": "free_mode.cpp",
+      "filePath": "firmware/src/modes/free_mode.cpp",
+      "summary": "Implements FreeMode standalone behavior, animating expressions and playing jingles via the buzzer when untethered.",
+      "tags": ["mode", "controller", "standalone"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:firmware/src/modes/free_mode.cpp:update",
+      "type": "function",
+      "name": "update",
+      "filePath": "firmware/src/modes/free_mode.cpp",
+      "lineRange": [21, 110],
+      "summary": "Per-tick FreeMode update that cycles expressions and triggers jingle playback for autonomous behavior.",
+      "tags": ["mode", "event-handler", "main-loop"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:firmware/src/modes/free_mode.cpp:enter",
+      "type": "function",
+      "name": "enter",
+      "filePath": "firmware/src/modes/free_mode.cpp",
+      "lineRange": [13, 16],
+      "summary": "Initializes FreeMode state when the mode becomes active.",
+      "tags": ["mode", "lifecycle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/modes/free_mode.h",
+      "type": "file",
+      "name": "free_mode.h",
+      "filePath": "firmware/src/modes/free_mode.h",
+      "summary": "Declares FreeMode, a Mode subclass for standalone untethered operation.",
+      "tags": ["mode", "type-definition", "header"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/modes/free_mode.h:FreeMode",
+      "type": "class",
+      "name": "FreeMode",
+      "filePath": "firmware/src/modes/free_mode.h",
+      "lineRange": [11, 30],
+      "summary": "FreeMode class extending Mode to implement autonomous standalone behavior with expressions and jingles.",
+      "tags": ["mode", "controller", "class"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:firmware/src/modes/mode.h",
+      "type": "file",
+      "name": "mode.h",
+      "filePath": "firmware/src/modes/mode.h",
+      "summary": "Declares the abstract Mode base class defining the enter/update operating-mode lifecycle interface.",
+      "tags": ["mode", "interface", "abstract"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:firmware/src/modes/mode.h:Mode",
+      "type": "class",
+      "name": "Mode",
+      "filePath": "firmware/src/modes/mode.h",
+      "lineRange": [8, 19],
+      "summary": "Abstract base class defining the Mode lifecycle (enter/update) implemented by concrete operating modes.",
+      "tags": ["mode", "interface", "abstract"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    { "source": "file:firmware/firmware.ino", "target": "function:firmware/firmware.ino:setup", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/firmware.ino", "target": "function:firmware/firmware.ino:loop", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/command.cpp", "target": "function:firmware/src/command.cpp:fromByte", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/command.cpp", "target": "function:firmware/src/command.cpp:execute", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/mood.cpp", "target": "function:firmware/src/mood.cpp:update", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/renderer.cpp", "target": "function:firmware/src/renderer.cpp:drawExpression", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/renderer.h", "target": "class:firmware/src/renderer.h:Renderer", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/transport.cpp", "target": "function:firmware/src/transport.cpp:poll", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/transport.h", "target": "class:firmware/src/transport.h:Transport", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/display/display.cpp", "target": "function:firmware/src/display/display.cpp:begin", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/display/display.h", "target": "class:firmware/src/display/display.h:Display", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "function:firmware/src/modes/desktop_mode.cpp:update", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "function:firmware/src/modes/desktop_mode.cpp:enter", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/desktop_mode.h", "target": "class:firmware/src/modes/desktop_mode.h:DesktopMode", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "function:firmware/src/modes/free_mode.cpp:update", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "function:firmware/src/modes/free_mode.cpp:enter", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/free_mode.h", "target": "class:firmware/src/modes/free_mode.h:FreeMode", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:firmware/src/modes/mode.h", "target": "class:firmware/src/modes/mode.h:Mode", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "class:firmware/src/modes/desktop_mode.h:DesktopMode", "target": "class:firmware/src/modes/mode.h:Mode", "type": "inherits", "direction": "forward", "weight": 0.9 },
+    { "source": "class:firmware/src/modes/free_mode.h:FreeMode", "target": "class:firmware/src/modes/mode.h:Mode", "type": "inherits", "direction": "forward", "weight": 0.9 },
+
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/assets/expressions.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/assets/jingles.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/buzzer/buzzer.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/command.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/config.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/imu/motion.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/imu/mpu6050.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/modes/desktop_mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/modes/free_mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/modes/mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/mood.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/renderer.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/transport.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/firmware.ino", "target": "file:firmware/src/views/view_manager.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/command.cpp", "target": "file:firmware/src/command.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/mood.cpp", "target": "file:firmware/src/mood.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/renderer.cpp", "target": "file:firmware/src/renderer.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/renderer.cpp", "target": "file:firmware/src/display/display.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/transport.cpp", "target": "file:firmware/src/transport.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/transport.h", "target": "file:firmware/src/command.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/display/display.cpp", "target": "file:firmware/src/display/display.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/display/display.cpp", "target": "file:firmware/src/config.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/modes/desktop_mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/assets/expressions.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/command.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/imu/mpu6050.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/renderer.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/transport.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/views/image_view.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.cpp", "target": "file:firmware/src/views/view_manager.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/modes/desktop_mode.h", "target": "file:firmware/src/mood.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/desktop_mode.h", "target": "file:firmware/src/modes/mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "file:firmware/src/modes/free_mode.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "file:firmware/src/assets/expressions.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "file:firmware/src/assets/jingles.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "file:firmware/src/buzzer/buzzer.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/free_mode.cpp", "target": "file:firmware/src/views/view_manager.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:firmware/src/modes/free_mode.h", "target": "file:firmware/src/mood.h", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:firmware/src/modes/free_mode.h", "target": "file:firmware/src/modes/mode.h", "type": "imports", "direction": "forward", "weight": 0.7 }
+  ]
+}
